@@ -283,27 +283,23 @@ h4 {
 }
 
 /* Neue Player-Version für Bunny Stream */
+/* Intro-Video: immer runde Ecken, iframe füllt alles aus */
 .intro-video-wrapper {
-  width: 40%;              /* gleiche Breite wie dein vorheriges Video */
+  width: 40%;
   max-width: 700px;
-  margin: 30px auto;       /* CENTER! */
-  border-radius: 10px;
-  overflow: hidden;        /* runde Ecken auch für den Iframe */
-  box-shadow: 0 0 20px rgba(0,0,0,0.25);
-
-  position: relative;
-  padding-top: 22.5%;     /* 16:9 Verhältnis */
+  margin: 30px auto;
 }
 
-/* Iframe passend skalieren */
 .intro-video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;    /* hält das Seitenverhältnis stabil */
   border: 0;
+  border-radius: 10px;      /* 👈 direkt das IFRAME abrunden */
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
 }
+
 
 .buy-button-wrapper {
   text-align: center;      /* zentriert den Button */
@@ -730,23 +726,20 @@ h6 {
 .dot {
   opacity: 0.5;
 }
+/* Intro-Video: immer runde Ecken, iframe füllt alles aus */
 .intro-video-wrapper {
-  overflow: hidden !important;
-  border-radius: 12px !important;
-  -webkit-mask-image: radial-gradient(circle, white 100%, black 100%) !important;
+  width: 40%;
+  max-width: 700px;
+  margin: 30px auto;
 }
+
 .intro-video-wrapper iframe {
-  width: 100% !important;
-  height: 100% !important;
-  border: none !important;
-  border-radius: 12px;
   display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;    /* hält das Seitenverhältnis stabil */
+  border: 0;
+  border-radius: 10px;      /* 👈 direkt das IFRAME abrunden */
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
 }
-.intro-video-wrapper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  pointer-events: none;
-  box-shadow: 0 0 0 9999px transparent;
-}
+
