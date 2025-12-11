@@ -730,3 +730,23 @@ h6 {
 .dot {
   opacity: 0.5;
 }
+.intro-video-wrapper {
+  overflow: hidden !important;
+  border-radius: 12px !important;
+  -webkit-mask-image: radial-gradient(circle, white 100%, black 100%) !important;
+}
+.intro-video-wrapper iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  border-radius: 12px;
+  display: block;
+}
+.intro-video-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  box-shadow: 0 0 0 9999px transparent;
+}
