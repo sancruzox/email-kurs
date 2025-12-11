@@ -441,33 +441,128 @@ body {
   padding: 20px 0;   /* ← 40px oben UND unten */
 }
 
-/* Entfernt alle Brevo-Standardstyles */
-#sib-container, 
-.sib-form, 
-.sib-form-container,
-.sib-form-block, 
-.entry__field,
-.sib-input {
-    all: unset !important;
+/* Entfernt Brevo-Styling */
+.sib-container--vertical,
+#sib-container,
+.sib-form,
+.sib-form-container {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
 }
 
-/* Verhindert doppelte Brevo-Errormeldungen */
-.entry__error {
+/* Textfeld wrapper */
+.brevo-wrapper .entry__field {
+    width: 100%;
+    background: transparent;
+    border-radius: 10px;
+    border: 1.5px solid #595959;
+    padding: 2px;
+    margin-bottom: 12px;
+}
+
+/* Textfeld */
+.brevo-wrapper input.input {
+    width: 100%;
+    border: none !important;
+    background: transparent !important;
+    color: #fff !important;
+    padding: 16px 24px !important;
+    font-size: 1.2rem;
+}
+
+/* Placeholder */
+.brevo-wrapper input::placeholder {
+    color: #898989 !important;
+}
+
+/* Button */
+.brevo-wrapper .sib-submit-button {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 19px 24px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: 350;
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.4);
+}
+
+.brevo-wrapper .sib-submit-button:active {
+    transform: translateY(1px);
+}
+
+/* Versteckt die Error / Success Boxen */
+#success-message,
+#error-message {
     display: none !important;
 }
-.sib-form-block,
-.sib-input {
-    display: contents !important;
+
+/* --- Formular schmaler machen --- */
+
+/* Gesamtbreite des Brevo-Formulars reduzieren */
+#sib-container {
+    max-width: 360px !important;    /* vorher 540px */
+    width: 100% !important;
+    margin: 0 auto !important;
 }
 
-/* Anti-Bot Feld wieder unsichtbar machen */
+/* Email Input schmaler + angepasst */
+#sib-container input.input {
+    width: 100% !important;
+    padding: 16px 22px !important;
+    font-size: 1.1rem !important;
+    border-radius: 10px !important;
+    border: 1.5px solid #595959 !important;
+    background: transparent !important;
+    color: #fff !important;
+}
+
+/* Button schmaler + dein Style */
+#sib-container button.sib-form-block__button {
+    width: 100% !important;
+    padding: 18px 22px !important;
+    font-size: 1.2rem !important;
+    border-radius: 10px !important;
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.4) !important;
+    cursor: pointer !important;
+    text-align: center !important;
+}
+
+/* Button active-style */
+#sib-container button.sib-form-block__button:active {
+    transform: translateY(1px) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+}
+
+/* Abstand zwischen Input und Button */
+#sib-container .sib-form-block {
+    padding: 4px 0 !important;
+}
+/* Entfernt Brevo Input-Border */
+.sib-input input.input {
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+}
+
+/* Entfernt das zusätzliche Brevo-Wrapper-Border */
+.sib-input,
+.entry__field {
+    border: none !important;
+    box-shadow: none !important;
+}
+/* Entfernt den weißen Brevo-Honeypot-Kasten vollständig */
 input[name="email_address_check"] {
     display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
     height: 0 !important;
-    width: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
     border: none !important;
+    background: transparent !important;
 }
