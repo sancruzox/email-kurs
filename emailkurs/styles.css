@@ -440,3 +440,34 @@ body {
 .highlight-scroller {
   padding: 20px 0;   /* ← 40px oben UND unten */
 }
+
+/* Entfernt alle Brevo-Standardstyles */
+#sib-container, 
+.sib-form, 
+.sib-form-container,
+.sib-form-block, 
+.entry__field,
+.sib-input {
+    all: unset !important;
+}
+
+/* Verhindert doppelte Brevo-Errormeldungen */
+.entry__error {
+    display: none !important;
+}
+.sib-form-block,
+.sib-input {
+    display: contents !important;
+}
+
+/* Anti-Bot Feld wieder unsichtbar machen */
+input[name="email_address_check"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
