@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Email Course Landing</title>
+
+  <!-- Deine Styles -->
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <!-- ================= HERO ================= -->
   <main class="hero">
     <div class="hero-inner">
       <!-- Linke Spalte: Text + Formular -->
@@ -20,48 +24,42 @@
 
         <p class="hero-subtitle">
           Ein GRATIS 5-Tage E-Mail Kurs, der dir genau zeigt,
-          wie moderne Artists ihren Vocal sound professionell, 
-          laut und klar bekommen
+          wie moderne Artists ihren Vocal Sound professionell, 
+          laut und klar bekommen.
         </p>
 
-        <div class="brevo-wrapper">
-  <!-- Brevo Form: BEGIN -->
-  <div class="sib-form">
-    <div id="sib-form-container" class="sib-form-container">
-      <div id="sib-container" class="sib-container--large sib-container--vertical">
-       <form id="sib-form-hero" method="POST"
-action="https://12c7a180.sibforms.com/serve/MUIFACE6u9gxqlZtU5QwmtiGNijQXs7tQSPYWstFcyI5F8VI9_dOfyztdXcOyUlGv72ScO-wbcQJPAVraFYLjvzHmq0hdZwCyeEldRFeWm88m-nEsu697tiqNbP_r2MPq2xQzn6F2x7c4aZsNjRnwp1vDt7_v7xZMbc14mPDAys7N9poAzLdWcRsjkDgfaRobs7O2G9mpnIadzLyeg==">
+        <!-- HERO FORM (Form 1) -->
+        <form
+          id="form-hero"
+          class="signup-form"
+          method="POST"
+          action="https://12c7a180.sibforms.com/serve/MUIFACE6u9gxqlZtU5QwmtiGNijQXs7tQSPYWstFcyI5F8VI9_dOfyztdXcOyUlGv72ScO-wbcQJPAVraFYLjvzHmq0hdZwCyeEldRFeWm88m-nEsu697tiqNbP_r2MPq2xQzn6F2x7c4aZsNjRnwp1vDt7_v7xZMbc14mPDAys7N9poAzLdWcRsjkDgfaRobs7O2G9mpnIadzLyeg=="
+        >
+          <label class="input-wrapper">
+            <input
+              type="email"
+              name="EMAIL"
+              placeholder="name@example.com"
+              required
+            >
+          </label>
 
-    <div class="entry__field">
-        <input class="input" type="email" 
-               id="EMAIL"
-               name="EMAIL"
-               placeholder="name@example.com" required />
-    </div>
+          <button type="submit" class="cta-button">
+            Sende mir Tag 1
+          </button>
 
-    <button class="sib-submit-button" type="submit">Sende mir Tag 1</button>
-
-    <input type="text" name="email_address_check" value="" class="input--hidden">
-    <input type="hidden" name="locale" value="de">
-
-</form>
-
-      </div>
-    </div>
-  </div>
-  <!-- Brevo Form: END -->
-</div>
-
-
-
+          <!-- Brevo Honeypot (unsichtbar lassen & leer) -->
+          <input type="text" name="email_address_check" value="" style="display:none;">
+          <!-- Sprache -->
+          <input type="hidden" name="locale" value="de">
+          <!-- Simple HTML Form -->
+          <input type="hidden" name="html_type" value="simple">
+        </form>
       </section>
 
       <!-- Rechte Spalte: „Buch“-Bild -->
       <section class="hero-visual">
         <div class="book-mockup">
-          <!-- Du kannst hier einfach ein echtes Bild nutzen -->
-          <!-- <img src="dein-cover.png" alt="The Virality Blueprint"> -->
-
           <div class="book-header-lines"></div>
           <div class="book-title">The Virality Blueprint</div>
           <div class="book-subtitle">
@@ -74,102 +72,92 @@ action="https://12c7a180.sibforms.com/serve/MUIFACE6u9gxqlZtU5QwmtiGNijQXs7tQSPY
     </div>
   </main>
 
+  <!-- ================= HIGHLIGHTS ================= -->
   <section class="highlight-section">
-  <h3>Erfolgreiche Künstler & Marken vertrauen auf meine Arbeit</h3>
-  <h4>Meine Mixing Highlights</h4>
+    <h3>Erfolgreiche Künstler & Marken vertrauen auf meine Arbeit</h3>
+    <h4>Meine Mixing Highlights</h4>
 
-  <div class="highlight-scroller">
-    <div class="highlight-track">
-
-      <!-- Item 1 -->
+    <div class="highlight-scroller">
+      <div class="highlight-track">
         <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/references-bassa2.png" class="highlight-item" alt="Bassa 2" />
-      </a>
 
-      <!-- Item 2 -->
-      <a href="https://open.spotify.com/intl-de/track/0q3jXMMN5XZCHexSPkWipH?si=31b382c7d0b046e3" target="_blank">
-        <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/references-nadiife.png" class="highlight-item" alt="Nadiife" />
-      </a>
+        <a href="https://open.spotify.com/intl-de/track/0q3jXMMN5XZCHexSPkWipH?si=31b382c7d0b046e3" target="_blank">
+          <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/references-nadiife.png" class="highlight-item" alt="Nadiife" />
+        </a>
 
-      <!-- Item 3 -->
-      <a href="https://open.spotify.com/intl-de/track/4s51pU4PIcoReTay8pluzo?si=fd1e9eb0c9934075" target="_blank">
-        <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/references-caney1b.png" class="highlight-item" alt="Caney 1" />
-      </a>
+        <a href="https://open.spotify.com/intl-de/track/4s51pU4PIcoReTay8pluzo?si=fd1e9eb0c9934075" target="_blank">
+          <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/references-caney1b.png" class="highlight-item" alt="Caney 1" />
+        </a>
 
-      <!-- Item 4 -->
-      <a href="https://open.spotify.com/intl-de/track/4pHrsUucnIfuustV09VXKb?si=1467b6e619194cc4" target="_blank">
-        <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/references-caney2.png" class="highlight-item" alt="Caney 2" />
-      </a>
+        <a href="https://open.spotify.com/intl-de/track/4pHrsUucnIfuustV09VXKb?si=1467b6e619194cc4" target="_blank">
+          <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/references-caney2.png" class="highlight-item" alt="Caney 2" />
+        </a>
 
-      <!-- Item 5 -->
-      <a href="https://open.spotify.com/intl-de/track/7t2C6805FQYU31zoQCA2Gl?si=2397c1eb66fe409d" target="_blank">
-        <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/references-bassa.png" class="highlight-item" alt="Bassa" />
-      </a>
-
+        <a href="https://open.spotify.com/intl-de/track/7t2C6805FQYU31zoQCA2Gl?si=2397c1eb66fe409d" target="_blank">
+          <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/references-bassa.png" class="highlight-item" alt="Bassa" />
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- 🔽 NEU: Trusted / Brand Strip – kommt NACH dem Hero und ist komplett eigenständig -->
+  <!-- ================= BRAND-STRIP ================= -->
   <section class="brand-strip">
     <p class="brand-strip__label">
       Firmen mit denen ich gearbeitet habe
     </p>
 
     <div class="brand-strip__logos">
-      <!-- Pfad zu deinem Logos-Bild anpassen -->
       <img src="https://pvpp-images.b-cdn.net/Brand-Karussell/Brandkarussel%20Remastered%20v3.png" alt="Logos von Meta, Adobe, Spotify">
     </div>
   </section>
+
+  <!-- ================= CREATOR SECTION ================= -->
   <section class="creator">
-  <div class="creator-inner">
-    
-    <!-- Linke Seite: Rundes Bild -->
-    <div class="creator-photo">
-      <!-- Pfad zu deinem Bild anpassen -->
-      <img src="https://email-kurs-page.b-cdn.net/Robin%202025%20(Gelber%20HG%20v3).jpg" alt="Dein Name">
-    </div>
+    <div class="creator-inner">
+      <!-- Linke Seite: Rundes Bild -->
+      <div class="creator-photo">
+        <img src="https://email-kurs-page.b-cdn.net/Robin%202025%20(Gelber%20HG%20v3).jpg" alt="San Cruzo">
+      </div>
 
-    <!-- Rechte Seite: Text + Liste + Formular -->
-    <div class="creator-copy">
-      <h2>Erstellt von San Cruzo, der …</h2>
+      <!-- Rechte Seite: Text + Liste + Formular -->
+      <div class="creator-copy">
+        <h2>Erstellt von San Cruzo, der …</h2>
 
-      <ul class="creator-list">
-        <li>18+ Mio Streams auf seinen Mixes für Artists erreicht hat </li>
-        <li>Sich die letzten Jahre obsessiv dem Thema Vocal Mixing gewidmet hat </li>
-        <li>Über 40.000 Abonnenten mit seinem Wissen überzeugt hat</li>
-      </ul>
+        <ul class="creator-list">
+          <li>18+ Mio Streams auf seinen Mixes für Artists erreicht hat</li>
+          <li>sich die letzten Jahre obsessiv dem Thema Vocal Mixing gewidmet hat</li>
+          <li>über 40.000 Abonnenten mit seinem Wissen überzeugt hat</li>
+        </ul>
 
-     <div class="brevo-wrapper">
-  <!-- Brevo Form: BEGIN -->
-  <div class="sib-form">
-    <div id="sib-form-container" class="sib-form-container">
-      <div id="sib-container" class="sib-container--large sib-container--vertical">
-        <form id="sib-form-creator" method="POST"
-      action="https://12c7a180.sibforms.com/serve/MUIFACE6u9gxqlZtU5QwmtiGNijQXs7tQSPYWstFcyI5F8VI9_dOfyztdXcOyUlGv72ScO-wbcQJPAVraFYLjvzHmq0hdZwCyeEldRFeWm88m-nEsu697tiqNbP_r2MPq2xQzn6F2x7c4aZsNjRnwp1vDt7_v7xZMbc14mPDAys7N9poAzLdWcRsjkDgfaRobs7O2G9mpnIadzLyeg==">
+        <!-- CREATOR FORM (Form 2) -->
+        <form
+          id="form-creator"
+          class="signup-form"
+          method="POST"
+          action="https://12c7a180.sibforms.com/serve/MUIFACE6u9gxqlZtU5QwmtiGNijQXs7tQSPYWstFcyI5F8VI9_dOfyztdXcOyUlGv72ScO-wbcQJPAVraFYLjvzHmq0hdZwCyeEldRFeWm88m-nEsu697tiqNbP_r2MPq2xQzn6F2x7c4aZsNjRnwp1vDt7_v7xZMbc14mPDAys7N9poAzLdWcRsjkDgfaRobs7O2G9mpnIadzLyeg=="
+        >
+          <label class="input-wrapper">
+            <input
+              type="email"
+              name="EMAIL"
+              placeholder="name@example.com"
+              required
+            >
+          </label>
 
-          <div class="entry__field">
-              <input class="input" type="email" id="EMAIL" name="EMAIL"
-              placeholder="name@example.com" required />
-          </div>
+          <button type="submit" class="cta-button">
+            Sende mir Tag 1
+          </button>
 
-          <button class="sib-submit-button" type="submit">Sende mir Tag 1</button>
-
-          <input type="text" name="email_address_check" value="" class="input--hidden">
+          <input type="text" name="email_address_check" value="" style="display:none;">
           <input type="hidden" name="locale" value="de">
+          <input type="hidden" name="html_type" value="simple">
         </form>
       </div>
     </div>
-  </div>
-  <!-- Brevo Form: END -->
-</div>
+  </section>
 
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= LETZTE SECTION: MISTAKES ================= -->
+  <!-- ================= MISTAKES / COURSE SECTION ================= -->
   <section class="course-section">
     <div class="course-inner">
       <h2>Vermeide die Fehler, die deinen Mix zurückhalten</h2>
@@ -187,42 +175,32 @@ action="https://12c7a180.sibforms.com/serve/MUIFACE6u9gxqlZtU5QwmtiGNijQXs7tQSPY
         <li><strong>Fehler&nbsp;5:</strong> Du hast keinen klaren Referenz-Sound und mischst „ins Blaue hinein“.</li>
       </ul>
 
-<div class="brevo-wrapper">
-  <!-- Brevo Form: BEGIN -->
-  <div class="sib-form">
-    <div id="sib-form-container" class="sib-form-container">
-      <div id="sib-container" class="sib-container--large sib-container--vertical">
-        <form id="sib-form-mistakes" method="POST"
-      action="https://12c7a180.sibforms.com/serve/MUIFACE6u9gxqlZtU5QwmtiGNijQXs7tQSPYWstFcyI5F8VI9_dOfyztdXcOyUlGv72ScO-wbcQJPAVraFYLjvzHmq0hdZwCyeEldRFeWm88m-nEsu697tiqNbP_r2MPq2xQzn6F2x7c4aZsNjRnwp1vDt7_v7xZMbc14mPDAys7N9poAzLdWcRsjkDgfaRobs7O2G9mpnIadzLyeg==">
+      <!-- MISTAKES FORM (Form 3) -->
+      <form
+        id="form-mistakes"
+        class="signup-form"
+        method="POST"
+        action="https://12c7a180.sibforms.com/serve/MUIFACE6u9gxqlZtU5QwmtiGNijQXs7tQSPYWstFcyI5F8VI9_dOfyztdXcOyUlGv72ScO-wbcQJPAVraFYLjvzHmq0hdZwCyeEldRFeWm88m-nEsu697tiqNbP_r2MPq2xQzn6F2x7c4aZsNjRnwp1vDt7_v7xZMbc14mPDAys7N9poAzLdWcRsjkDgfaRobs7O2G9mpnIadzLyeg=="
+      >
+        <label class="input-wrapper">
+          <input
+            type="email"
+            name="EMAIL"
+            placeholder="name@example.com"
+            required
+          >
+        </label>
 
-          <div class="entry__field">
-              <input class="input" type="email" id="EMAIL" name="EMAIL"
-              placeholder="name@example.com" required />
-          </div>
+        <button type="submit" class="cta-button">
+          Sende mir Tag 1
+        </button>
 
-          <button class="sib-submit-button" type="submit">Sende mir Tag 1</button>
-
-          <input type="text" name="email_address_check" value="" class="input--hidden">
-          <input type="hidden" name="locale" value="de">
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- Brevo Form: END -->
-</div>
-
-
-
-
+        <input type="text" name="email_address_check" value="" style="display:none;">
+        <input type="hidden" name="locale" value="de">
+        <input type="hidden" name="html_type" value="simple">
+      </form>
     </div>
   </section>
-
-<script>
-  window.LOCALE = 'de';
-  window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein.";
-  window.EMAIL_INVALID_MESSAGE = "Bitte gib eine gültige E-Mail ein.";
-</script>
-
 
 </body>
 </html>
