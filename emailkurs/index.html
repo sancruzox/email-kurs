@@ -202,5 +202,19 @@
     </div>
   </section>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Alle Brevo-Felder finden
+  const emailInputs = document.querySelectorAll("#sib-container input[name='EMAIL']");
+
+  emailInputs.forEach(input => {
+    input.setAttribute("placeholder", "name@beispiel.com");  // dein Text hier
+  });
+
+});
+</script>
+
+  
 </body>
 </html>
