@@ -29,20 +29,24 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 64px;
+  padding-left: 70px;
 }
 
 /* ───── Linke Spalte ───── */
 
 .hero-copy h1 {
-  font-size: clamp(2rem, 3.2vw, 3.4rem);
+  font-size: clamp(2.5rem, 3.7vw, 3.9rem);
   line-height: 1.05;
   font-weight: 150;
   letter-spacing: -0.04em;
   margin-bottom: 32px;
+  padding-top: 80px;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 450;
+  letter-spacing: -0.5px;
   line-height: 1.6;
   max-width: 34rem;
   color: #ffffff;
@@ -111,9 +115,9 @@ body {
 }
 
 .book-mockup {
-  width: 340px;
-  height: 520px;
-  background: #f7f7f7;
+  width: 480px;
+  height: 660px;
+  background: transparent;
   border-radius: 16px;
   padding: 32px 28px;
   box-shadow: 0 24px 60px rgba(0,0,0,0.7);
