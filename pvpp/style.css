@@ -75,11 +75,11 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 }
 .hero .price {
-  color: #fff;
+  font-size: 18px;
   text-align: center;
-  margin-top: 2rem;
-  font-size: 1rem;
-  font-weight: 600;
+  padding-top: 50px;
+  color: white;
+  font-weight: 500;
 }
 .hero .buy-button-wrapper {
   margin-top: 2rem;
@@ -301,7 +301,7 @@ body {
 .highlight-section h4 {
   text-align: center;
   color: #a9a9a9;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 400;
   margin-bottom: 2rem;
 }
