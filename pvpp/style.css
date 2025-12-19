@@ -1,317 +1,96 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Gradient-Hintergrund */
 html,
 body {
   height: 100%;
-  font-family: 'Montserrat';
-  background: linear-gradient(
-    180deg,
-    #0e0e0e 0%,
-    #1b1b1b 40%,
-    #282828 100%
-  );
-  background-attachment: fixed;  /* 👈 wichtig */
+  font-family: "Montserrat";
+  background: linear-gradient(180deg, #0e0e0e 0%, #1b1b1b 40%, #282828 100%);
+  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;        /* füllt den Viewport schön aus */
+  background-size: cover;
+  min-height: 100vh;
 }
 
-
-h3 {
-  font-size: 30px;
-  text-align: center;
-  padding-top: 50px;
-  color: white;
-  font-weight: 600;
+.sec {
+  padding: 4rem 0;
+}
+@media (min-width: 768px) {
+  .sec {
+    padding: 3rem 0rem;
   }
+}
 
- .highlight {
-  color: yellow; /* Das Wort im span ist gelb */
+.main-heading {
+  font-size: 1.85rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+}
+.main-heading .highlight {
+  color: #ffff00;
   text-shadow: 0 0 0px rgba(253, 253, 35, 0.5);
 }
+@media all and (max-width: 767px) {
+  .main-heading {
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+  .main-heading .highlight {
+    display: block;
+  }
+}
 
-.subheading-text {
-  color: #c8c8c8;  /* schönes hellgrau */
-  margin-top: 10px;
+.sub-heading {
+  color: #c8c8c8;
   text-align: center;
-  padding-left: 20px;
-  padding-top: 10px;
+  margin-top: 1.4rem;
 }
 
-p {
-  margin-top: 10px;
-  text-align: center;
-  padding-left: 20px;
-  padding-top: 10px;
-  color: white;
-}
-
-h4 {
-  font-size: 30px;
-  text-align: center;
-  padding-top: 50px;
-  color: white;
-  font-weight: 600;
-
-}
-
-.compatible-section {
-  text-align: center;
-  background: #e6e207;       /* hellgrauer Trenner */
-  padding: 0px 0 30px 0;    /* ↑ mehr Platz nach unten ↑ */
-  border-radius: 0px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-.compatible-section h3 {
-  font-size: 17px;
-  margin-bottom: 20px;
-  color: #404040;
-  font-weight: 400;
-  padding-top: 30px;
-}
-
-/* Icons korrekt im Block halten */
-.icons {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  padding-top: 0; /* oder weniger */
-}
-
-.icon {
-  width: 80px;
-  height: 80px;
-
-  /* für Animationen */
-  transition: transform 0.25s ease;
-}
-
-.icon:hover {
-  transform: scale(1.08);
-  filter: drop-shadow(0 0 6px rgba(255,255,255,0.15));
-}
-
-.wrapper {
-  display: flex;
-  align-items: flex-start;       /* vertikal zentrieren */
-  gap: 40px;                 /* Abstand zwischen Bild und Box */
-  max-width: 1200px;
-  margin: 100px auto;        /* zentriert die gesamte Sektion */
-  flex-wrap: wrap;
-}
-
-.product-image1 {
-  width: 31.6%;                /* Bildbreite */
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.price-tag {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background-color: rgb(180, 180, 180); /* Gelber Hintergrund */
-  color: black; /* Textfarbe */
-  padding: 6px 22px;
-  font-weight: 500;
-  font-size: 14px;
-  border-radius: 2px;
-}
-
-.box {
-  width: 55%;                /* Boxbreite */
-  background: #2B2B2B;
-  border-radius: 10px;
-  padding: 22px 12px;
-  box-sizing: border-box;
-  color: white;
-  position: relative; /* Damit das absolute Positionieren im price-tag funktioniert */
-}
-
-.box h1 {
+.inner-heading {
   color: rgb(231, 247, 83);
   text-align: left;
-  background-color: #2B2B2B;
-  padding-left: 20px;
+  background-color: #2b2b2b;
+  font-weight: 600;
   font-size: 25px;
   text-shadow: 0 0 8px rgba(253, 253, 35, 0.5);
 }
 
-.box p {
-  margin-top: 10px;
-  text-align: left;
-  background-color: #2B2B2B;
-  padding-left: 20px;
-  padding-top: 10px;
-}
-.box h2 {
-  color: rgb(255, 255, 255);
-  text-align: left;
-  background-color: #2B2B2B;
-  padding-left: 20px;
-  font-weight: 500;
-  font-size:larger;
-  padding-bottom: 20px;
-  padding-top: 10px;
-}
-.product-image2 {
-  width: 30%;                /* Bildbreite */
-  border-radius: 10px;
-  object-fit: cover;
-}
-.reviews {
-  padding: 80px 24px;
-}
-
-.reviews h3 {
-  font-size: 38px;
-  margin-bottom: 40px;
-}
-
-/* Container für die Screenshots */
-.screenshots {
-  max-width: 1100px;             /* Breite der ganzen Review-Sektion */
-  margin: 0 auto;                /* zentrieren */
-  display: grid;                 /* 2er Grid */
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;                     /* Abstand zwischen den Reviews */
-}
-
-/* Einzelnes Review-Bild */
-.screen {
-  width: 100%;                   /* füllt die Grid-Spalte */
-  height: auto;                  /* Seitenverhältnis bleibt erhalten */
-  display: block;
-  object-fit: contain;           /* Screenshot wird komplett gezeigt */
-  border-radius: 12px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);  /* nicer „Floating“-Look */
-}
-
-/* Container: nur ein Teil sichtbar + Fade unten */
-.reviews {
-  position: relative;
-  max-height: 1030px;   /* Höhe anpassen bis halbe Reihe perfekt passt */
-  overflow: hidden;
-  
-  /* sanfter Fade nach unten */
-  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-}
-
-
-/* ==== WAVESURFER LAYOUT ==== */
-
-.waveformSets {
-  margin-top: 24px;
+.hero .intro-video-wrapper {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;  /* zwei Tracks pro Reihe */
-  gap: 10px 24px;
-  padding: 0;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 0;
-  padding-bottom: 0;
-  row-gap: 22px;
+  height: 100%;
+  margin-top: 1rem;
 }
-
-/* jedes Track-„Kärtchen“ */
-.waveformSet {
-  background-color: transparent;   /* nutzt den Box-Hintergrund */
-}
-
-/* Zeile mit Icon + Wave */
-.wave-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Play-Icon */
-.wave-row i {
-  flex: 0 0 18px;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 16px;
-  background: transparent;
-}
-
-/* Wellenform rechts daneben */
-.waveformContainer {
-  flex: 1 1 auto;
-  height: 32px !important;
-}
-
-/* Sicherheitshalber Canvas-Hintergrund weg */
-.waveformContainer canvas {
-  background: transparent !important;
-}
-
-/* Titel unter der Welle */
-.wave-title {
-  margin-top: 4px;
-  font-size: 12px;
-  color: #cccccc;
-  text-align: center;
-  background: transparent;
-}
-/* ==== WAVESURFER HINTERGRUND AN BOX ANGLEICHEN ==== */
-
-/* Alles im Player bekommt den gleichen Hintergrund wie .box */
-.box .waveformSet,
-.box .wave-row,
-.box .waveformContainer,
-.box .wave-title,
-.box .wave-row i {
-  background-color: #2B2B2B !important;
-}
-
-/* Canvas selbst bleibt transparent, damit nur die Welle sichtbar ist */
-.box .waveformContainer canvas {
-  background-color: transparent !important;
-}
-/* Wellenform-Hintergrund exakt wie Box einfärben */
-.box .waveformContainer,
-.box .waveformContainer canvas {
-  background-color: #2B2B2B !important;
-}
-
-/* Neue Player-Version für Bunny Stream */
-/* Intro-Video: immer runde Ecken, iframe füllt alles aus */
-.intro-video-wrapper {
-  width: 40%;
-  max-width: 700px;
-  margin: 30px auto;
-}
-
-.intro-video-wrapper iframe {
+.hero .intro-video-wrapper iframe {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;    /* hält das Seitenverhältnis stabil */
+  aspect-ratio: 16/9;
   border: 0;
-  border-radius: 10px;      /* 👈 direkt das IFRAME abrunden */
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
 }
-
-
-.buy-button-wrapper {
-  text-align: center;      /* zentriert den Button */
-  margin-top: 20px;
-  margin-bottom: 20px;
+.hero .price {
+  color: #fff;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
-
-.buy-button {
+.hero .buy-button-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+.hero .buy-button-wrapper .buy-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding:2px 55px;         /* ← kompakter, nicer */
+  padding: 2px 55px;
+  /* ← kompakter, nicer */
   border-radius: 8px;
   background-color: #f6d12e;
   color: #000;
@@ -323,134 +102,272 @@ h4 {
   outline: none;
   transition: transform 0.01s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s ease, background-color 0.15s ease;
 }
-
-
-.buy-button span {
+.hero .buy-button-wrapper .buy-button span {
   color: #005ea6;
 }
-
-/* Hover-Effekt */
-.buy-button:hover {
-  background-color: #efc436;
-}
-
-.paypal-logo {
-  height: 33px;          /* gute Standardgröße */
-  margin-left: 4px;      /* kleiner Abstand zum Text */
-  margin-top: 4px;  /* HIER: leicht absenken */
+.hero .buy-button-wrapper .buy-button .paypal-logo {
+  height: 33px;
+  margin-left: 4px;
+  margin-top: 4px;
   vertical-align: middle;
 }
+.hero .buy-button-wrapper .buy-button:hover {
+  background-color: #efc436;
+}
+.hero .compatible-section {
+  margin-top: 3rem;
+  text-align: center;
+  background-color: #e6e207;
+  padding: 2rem 0;
+}
+.hero .compatible-section h3 {
+  font-size: 1rem;
+}
+.hero .compatible-section .icons {
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.hero .compatible-section .icons .icon {
+  width: 70px;
+  height: 70px;
+}
 
-
-h4 {
-  font-size: 16px;
-  font-weight: 400;
-  padding-top: 1px;
-  padding-bottom: 20px;
+.brete .box {
+  background: #2b2b2b;
+  border-radius: 10px;
+  height: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  color: white;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .brete .box {
+    text-align: center;
   }
+}
+.brete .box .price-tag {
+  display: flex;
+  justify-content: space-between;
+}
+.brete .box .price-tag .tag {
+  background-color: rgb(180, 180, 180);
+  color: black;
+  padding: 6px 22px;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 2px;
+}
+@media (max-width: 767px) {
+  .brete .box .price-tag {
+    justify-content: center;
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+  .brete .box .price-tag .tag {
+    background-color: transparent;
+    color: #e6e207;
+    padding: 0;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 767px) {
+  .brete .box .inner-heading {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .brete .box .inner-heading br {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .brete .box p {
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .brete .product-image1,
+  .brete .product-image2 {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 2rem auto;
+    display: block;
+  }
+}
+
+.waveformSets {
+  margin-top: 24px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+  padding: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+  row-gap: 22px;
+}
+@media (max-width: 767px) {
+  .waveformSets {
+    grid-template-columns: 1fr;
+    gap: 22px 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.waveformSet {
+  display: flex;
+  flex-direction: column;
+}
+
+.wave-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.wave-row .fas {
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.wave-row .waveformContainer {
+  flex: 1;
+  min-width: 0;
+}
+
+.wave-title {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #cccccc;
+  text-align: center;
+  background: transparent;
+}
+
+.reviews {
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+.reviews h3 {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.reviews .screenshots {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.reviews .screenshots .screen {
+  width: 48%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 1rem;
+  background-color: #212123;
+}
+.reviews .screenshots .screen img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 1rem;
+}
+@media all and (max-width: 767px) {
+  .reviews .screenshots .screen {
+    width: 100%;
+  }
+}
 
 .highlight-section {
-  width: 80%;          /* ← gewünschte Gesamtbreite */
-  margin: 0 auto;      /* ← Section zentrieren */
-  position: relative;
-  overflow: hidden;    /* Wichtig, damit Fade korrekt wirkt */
-  padding-top: 70px;
+  mask-image: linear-gradient(to right, transparent 0%, transparent 8%, black 20%, black 80%, transparent 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 8%, black 20%, black 80%, transparent 92%, transparent 100%);
 }
-
-
 .highlight-section h3 {
-  color: rgb(255, 255, 255);
-  font-size: 24px;
-  margin-bottom: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
   font-weight: 600;
-  padding-bottom: 10px;
+  margin-bottom: 2rem;
 }
+
 .highlight-section h4 {
+  text-align: center;
+  color: #a9a9a9;
   font-size: 1.2rem;
-  color: #999999;
-  margin-bottom: 0px;
   font-weight: 400;
+  margin-bottom: 2rem;
 }
 
-/* Outer container → full width, centered */
-.highlight-scroller {
-  width: 100%;
+.highlight-section .highlight-grid-desktop {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 50px 0;
+}
+@media (max-width: 767px) {
+  .highlight-section .highlight-grid-desktop {
+    display: none !important;
+  }
+}
+.highlight-section .highlight-grid-desktop .highlight-item-wrapper {
   display: flex;
+  align-items: center;
   justify-content: center;
-  overflow: hidden;
-
-  /* Genau dieser Fade-Effekt */
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    transparent 8%,
-    black 20%,
-    black 80%,
-    transparent 92%,
-    transparent 100%
-  );
-
-  /* Für Safari */
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    transparent 8%,
-    black 20%,
-    black 80%,
-    transparent 92%,
-    transparent 100%
-  );
 }
-
-
-/* Track inside → auto width from content */
-.highlight-track {
-  display: flex;
-  gap: 30px;
-}
-
-.highlight-track a {
-  cursor: default !important;   /* normaler Mauszeiger */
-}
-
-.highlight-track a:hover {
-  cursor: default !important;
-}
-
-
-/* Individual item */
-.highlight-item {
-  width: 260px;
+.highlight-section .highlight-grid-desktop .highlight-item-wrapper img {
+  max-width: 100%;
   height: auto;
-  border-radius: 20px;
-  flex-shrink: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-origin: center;
+}
+.highlight-section .highlight-swiper-mobile {
+  display: none !important;
+  padding: 50px 0;
+}
+.highlight-section .highlight-swiper-mobile .swiper-pagination {
+  position: relative;
+  margin-top: 30px;
+  bottom: 0 !important;
+}
+.highlight-section .highlight-swiper-mobile .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.highlight-section .highlight-swiper-mobile .swiper-slide img {
+  max-width: 100%;
+  height: auto;
+}
+.highlight-section .highlight-grid-mobile {
+  display: none !important;
+  padding: 50px 0;
+}
+@media (max-width: 767px) {
+  .highlight-section .highlight-grid-mobile {
+    display: flex !important;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.highlight-section .highlight-grid-mobile .highlight-item-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.highlight-section .highlight-grid-mobile .highlight-item-wrapper img {
+  max-width: 100%;
+  height: auto;
 }
 
-.highlight-item:hover {
-  transform: scale(1.02);
-}
-
-/*box-shadow: 0 10px 25px rgba(0,0,0,0.35);*/
-
-.highlight-scroller {
-  padding: 20px 0;   /* ← 40px oben UND unten */
-}
-
-/* ===== Brand Strip / Logos ===== */
-
-.brand-strip {
-  padding: 40px 24px 56px;
+.brand-strip__logos {
   text-align: center;
 }
-
-.brand-strip__label {
-  font-size: 1.2rem;
-  color: #999999;
-  margin-bottom: 35px;
-}
-
 .brand-strip__logos img {
   max-width: 600px;
   width: 100%;
@@ -458,35 +375,142 @@ h4 {
   opacity: 0.9;
   filter: grayscale(100%);
 }
-h5 {
-  font-size: 16px;
+
+.brand-strip__logos-desktop {
+  display: block !important;
+}
+@media (max-width: 767px) {
+  .brand-strip__logos-desktop {
+    display: none !important;
+  }
+}
+
+.brand-strip__logos-mobile {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .brand-strip__logos-mobile {
+    display: block !important;
+  }
+}
+
+.brand-strip-marquee {
+  display: none !important;
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+}
+@media (max-width: 767px) {
+  .brand-strip-marquee {
+    display: block !important;
+  }
+}
+.brand-strip-marquee .marquee-track {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.brand-strip-marquee .marquee-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  animation: marquee 30s linear infinite;
+}
+.brand-strip-marquee .brandstrip-mobile-item {
+  max-width: 120px;
+  width: auto;
+  height: auto;
+  opacity: 0.9;
+  filter: grayscale(100%);
+  flex-shrink: 0;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.backstory {
+  background: #23272e;
+  padding: 40px 0;
+}
+.backstory .backstory-left {
+  padding-right: 45px;
+}
+.backstory .backstory-left h2 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.backstory .backstory-left p {
+  color: #c8c8c8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.backstory .creator-wrapper {
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 12px;
-  color: white;
-  font-weight: 400;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 45px;
 }
-/* =======================
-   FAQ SECTION
-======================= */
-
-.faq {
-  max-width: 800px;
-  margin: 120px auto;
-  padding: 0 24px;
+@media (max-width: 767px) {
+  .backstory .creator-wrapper {
+    padding-left: 0;
+    margin-bottom: 2rem;
+  }
+}
+.backstory .creator-wrapper .creator-photo-wrapper {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+}
+@media (max-width: 767px) {
+  .backstory .creator-wrapper .creator-photo-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+}
+.backstory .creator-wrapper .creator-photo-wrapper .creator-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  /* Wir ändern die Position auf 'center top', damit das Bild oben ansetzt */
+  object-position: center top; 
+  
+  /* HIER IST DIE MAGIE: */
+  /* scale(1.3) = 130% Zoom (mach es größer, wenn du mehr Zoom willst) */
+  /* translateY(15px) = Schiebt das Bild 15px nach UNTEN (mehr Platz über Kopf) */
+  transform: scale(1.3) translateY(15px);
+}
+@media (max-width: 991px) {
+  .backstory {
+    padding: 40px 20px;
+  }
+  .backstory .backstory-left {
+    margin-bottom: 2rem;
+    text-align: center;
+    padding-right: 0;
+  }
+  .backstory .creator-wrapper {
+    padding-left: 0;
+  }
 }
 
-.faq-title {
+.faq .faq-title {
   text-align: center;
   font-size: 32px;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 40px;
 }
-
-/* FAQ-Card */
-.faq-item {
+.faq .faq-item {
   background: #22232a;
   border-radius: 10px;
   border: 1px solid #333542;
@@ -494,9 +518,10 @@ h5 {
   overflow: hidden;
   transition: border-color 0.2s ease;
 }
-
-/* Frage-Zeile (Button) */
-.faq-question {
+.faq .faq-item.is-open .faq-toggle {
+  transform: rotate(180deg);
+}
+.faq .faq-question {
   width: 100%;
   display: flex;
   align-items: center;
@@ -508,9 +533,10 @@ h5 {
   cursor: pointer;
   text-align: left;
 }
-
-/* Fragezeichen-Kreis */
-.faq-icon {
+.faq .faq-question:hover .faq-icon {
+  border-color: #f6d12e;
+}
+.faq .faq-icon {
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -519,36 +545,26 @@ h5 {
   justify-content: center;
   align-items: center;
   font-size: 14px;
+  flex-shrink: 0;
+  transition: border-color 0.2s ease;
 }
-
-/* Text */
-.faq-question-text {
+.faq .faq-question-text {
   flex: 1;
   font-size: 17px;
 }
-
-/* Pfeil */
-.faq-toggle {
+.faq .faq-toggle {
   font-size: 18px;
   transition: transform 0.25s ease;
+  flex-shrink: 0;
 }
-
-/* Pfeil dreht bei "open" */
-.faq-item.is-open .faq-toggle {
-  transform: rotate(180deg);
-}
-
-/* Antwort */
-.faq-answer {
+.faq .faq-answer {
   max-height: 0;
   overflow: hidden;
   background: #1b1c22;
   border-top: 1px solid #2b2d38;
   transition: max-height 0.22s ease;
-  
 }
-
-.faq-answer p {
+.faq .faq-answer p {
   padding: 16px 22px 20px;
   margin: 0;
   font-size: 15px;
@@ -556,190 +572,446 @@ h5 {
   line-height: 1.55;
   text-align: left;
 }
-
-h6 {
-  font-size: 26px;
-  text-align: center;
-  padding-top: 50px;
-  color: white;
-  font-weight: 600;
-  line-height: 1.6;
+@media (max-width: 767px) {
+  .faq .faq-title {
+    font-size: 24px;
+    margin-bottom: 30px;
   }
-
- .highlight {
-  font-size: 30px;
-  font-weight: 650;
-  color: yellow; /* Das Wort im span ist gelb */
-  text-shadow: 0 0 0px rgba(253, 253, 35, 0.5);
-}
-
-
-/* BACKSTORY SECTION */
-.backstory {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 90px;
-  padding: 40px 80px;
-  background: #23272e;
-}
-
-/* LINKER TEXTBEREICH */
-.backstory-left {
-  max-width: 600px;
-}
-
-.backstory-left h2 {
-  font-size: 34px;
-  color: white;
-  font-weight: 700;
-  margin-bottom: 25px;
-  letter-spacing: 2px;
-  text-align: left;       /* BÜNDIG FIX */
-  margin-left: 20px;
-}
-
-.backstory-left p {
-  font-size: 13px;
-  line-height: 1.7;
-  color: #d4d4d4;
-  text-align: left;       /* BÜNDIG FIX */
-
-}
-
-.backstory-2 {
-  max-width: 800px;
-  margin: 0 auto;       /* ← Container exakt in die Mitte */
-  text-align: center;   /* ← Inhalte zentrieren */
-}
-
-
-.backstory-2 h2 {
-  font-size: 30px;
-  color: white;
-  font-weight: 600;
-  margin-bottom: 15px;
-  letter-spacing: 0px;
-  text-align: center;       /* BÜNDIG FIX */
-
-}
-
-.backstory-2 p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #c8c8c8;
-  text-align: center;       /* BÜNDIG FIX */
-
-}
-
-/* Kreis-Container – bestimmt die Größe */
-.creator-wrapper {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  overflow: hidden;             /* schneidet das Bild kreisförmig aus */
-  position: relative;
-}
-
-/* Bild selbst wird skaliert & verschoben */
-.creator-photo {
-  width: 140%;                  /* ← Bild-ZOOM (100% normal, mehr = reinzoomen) */
-  height: auto;                 
-  position: absolute;
-  left: 50%;
-  top: 75%;                     /* ← verschiebt das Bild nach unten */
-  transform: translate(-50%, -50%);
-}
-
-  
-
-/* MOBILE VERSION */
-@media (max-width: 950px) {
-  .backstory {
-    flex-direction: column;
-    text-align: center;
+  .faq .faq-question {
+    padding: 16px 18px;
+    gap: 12px;
   }
-
-  .backstory-left h2,
-  .backstory-left p {
-    text-align: center; /* Auf Mobile mittig */
+  .faq .faq-question-text {
+    font-size: 15px;
   }
-
-  .creator-photo {
-    margin-top: 40px;
+  .faq .faq-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+  .faq .faq-answer p {
+    padding: 14px 18px 18px;
+    font-size: 14px;
   }
 }
-
-/* ===== FOOTER ===== */
-
-/* ===== FOOTER ===== */
 
 .site-footer {
   background: #151515;
-  padding: 40px 0 40px;
+  padding: 40px 0;
   color: #ebebeb;
   margin-top: 80px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
-
-/* Ganze Zeile nebeneinander */
-.footer-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.site-footer .footer-row {
   gap: 8px;
-  flex-wrap: wrap; /* Falls zu lang → bricht sauber um */
 }
-
-.footer-copy {
+.site-footer .footer-copy {
   font-size: 10px;
   opacity: 0.85;
-  white-space: nowrap;  /* verhindert hässliche Zeilenbrüche */
-  margin-bottom: 20px;
+  white-space: nowrap;
+  margin-bottom: 0;
   color: #ebebeb;
 }
-
-.footer-links {
-  display: flex;
-  align-items: center;
+.site-footer .footer-links {
   gap: 8px;
-  flex-wrap: wrap;
 }
-
-.footer-links a {
+.site-footer .footer-links a {
   color: #e5e5e5;
   text-decoration: none;
   font-size: 10px;
   opacity: 0.85;
-  transition: opacity 0.2s ease; border-color 0.2s ease;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;  /* invisible line, prevents layout shift */
-  padding-bottom: 2px;                   /* space for underline */
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
   margin-bottom: -4px;
 }
-
-.footer-links a:hover {
+.site-footer .footer-links a:hover {
   opacity: 1;
-  border-bottom: 1px solid #ffffff;      /* underline on hover */
+  border-bottom: 1px solid #ffffff;
 }
-
-.dot {
+.site-footer .dot {
   opacity: 0.5;
 }
-/* Intro-Video: immer runde Ecken, iframe füllt alles aus */
-.intro-video-wrapper {
-  width: 40%;
-  max-width: 700px;
-  margin: 30px auto;
-}
+@media (max-width: 767px) {
+  .site-footer {
+    margin-top: 60px;
+    padding: 30px 0;
+  }
+  .site-footer .footer-row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+  .site-footer .footer-copy {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .site-footer .footer-links {
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+}/*# sourceMappingURL=styles.css.map */
 
-.intro-video-wrapper iframe {
-  display: block;
+/* =========================================
+   RESTORE OLD DESKTOP SCROLLER
+   ========================================= */
+
+/* Scroller Container mit Fade-Effekt an den Seiten */
+.highlight-scroller {
   width: 100%;
-  aspect-ratio: 16 / 9;    /* hält das Seitenverhältnis stabil */
-  border: 0;
-  border-radius: 10px;      /* 👈 direkt das IFRAME abrunden */
+  display: flex;
+  justify-content: center;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+  padding: 40px 0;
+  
+  /* Der Fade-Effekt */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 2%,
+    black 15%,
+    black 85%,
+    transparent 98%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 2%,
+    black 15%,
+    black 85%,
+    transparent 98%,
+    transparent 100%
+  );
 }
 
+/* Die Track-Leiste für die Bilder */
+.highlight-track {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Styling nur für Desktop-Items */
+.highlight-scroller .highlight-item {
+  width: 260px; /* Deine alte feste Größe */
+  height: auto;
+  border-radius: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.highlight-scroller .highlight-item:hover {
+  transform: scale(1.02);
+}
+
+.highlight-scroller a {
+    text-decoration: none;
+    border: none;
+}
+
+/* MOBILE FIXES 
+   Stellt sicher, dass der Mobile-Slider angezeigt wird, 
+   da der Programmierer "display: none !important" im CSS hatte.
+*/
+@media (max-width: 991px) {
+    .highlight-swiper-mobile {
+        display: block !important;
+        padding-bottom: 40px;
+    }
+    
+    .highlight-swiper-mobile .swiper-pagination {
+        bottom: 0px !important;
+    }
+}
+
+/* =========================================
+   FIX: MOBILE VERSION SICHTBAR MACHEN
+   ========================================= */
+
+@media (max-width: 991px) {
+    /* Erzwingt die Anzeige des Sliders auf Mobile/Tablet */
+    .highlight-section .highlight-swiper-mobile {
+        display: block !important;
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+
+    /* Positionierung der Punkte (Pagination) korrigieren */
+    .highlight-section .highlight-swiper-mobile .swiper-pagination {
+        position: absolute;
+        bottom: 10px !important;
+        width: 100%;
+    }
+    
+    /* Stellt sicher, dass die Bilder im Slider zentriert sind */
+    .highlight-section .highlight-swiper-mobile .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+/* ============================================================
+   FIX: FADE-EFFEKT NUR FÜR MOBILE BRAND-STRIP (LOGOS)
+   ============================================================ */
+
+/* 1. Zuerst den "falschen" globalen Effekt von der ganzen Sektion entfernen */
+/* Damit werden deine Highlight-Bilder wieder klar und randlos */
+.highlight-section {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+}
+
+/* 2. Den Fade-Effekt NUR auf das Logo-Laufband (Mobile) anwenden */
+/* Die Klasse .brand-strip-marquee ist nur auf Handy/Tablet sichtbar */
+.brand-strip-marquee {
+    /* Ein weicher Verlauf: Transparent (0%) -> Sichtbar (10%) ... Sichtbar (90%) -> Transparent (100%) */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%) !important;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%) !important;
+    
+    /* Sicherstellen, dass der Container die volle Breite nutzt, damit der Fade am Rand sitzt */
+    width: 100%;
+    display: block !important;
+}
+
+/* =========================================
+   INDIVIDUELLE LOGO-GRÖSSEN (MOBILE)
+   ========================================= */
+
+/* Macht ein Logo kleiner (z.B. 70px breit) */
+.brand-strip-marquee .brandstrip-mobile-item.logo-klein {
+    max-width: 100px !important; 
+    /* Optional: Falls es zu klein wirkt, padding anpassen */
+    margin: 0 10px; 
+}
+
+/* Macht ein Logo größer (z.B. 160px breit) */
+.brand-strip-marquee .brandstrip-mobile-item.logo-gross {
+    max-width: 160px !important;
+}
+
+/* Macht ein Logo riesig (falls nötig) */
+.brand-strip-marquee .brandstrip-mobile-item.logo-xl {
+    max-width: 200px !important;
+}
+
+/* =========================================
+   FIX: STRIKTE TRENNUNG DESKTOP / MOBILE
+   ========================================= */
+
+/* 1. REGEL FÜR DESKTOP (Alles über 992px) */
+@media (min-width: 992px) {
+    /* Den beweglichen Mobile-Slider ZWANGSWEISE ausblenden */
+    .brand-strip-marquee,
+    .brand-strip__logos-mobile {
+        display: none !important;
+    }
+
+    /* Das statische Desktop-Bild anzeigen */
+    .brand-strip__logos-desktop {
+        display: block !important;
+    }
+}
+
+/* 2. REGEL FÜR MOBILE (Alles unter 991px) */
+@media (max-width: 991px) {
+    /* Den beweglichen Mobile-Slider anzeigen */
+    .brand-strip-marquee,
+    .brand-strip__logos-mobile {
+        display: block !important;
+    }
+
+    /* Das statische Desktop-Bild ausblenden */
+    .brand-strip__logos-desktop {
+        display: none !important;
+    }
+}
+
+/* =========================
+   PRICING SECTION
+========================= */
+
+.pricing-section {
+  padding: 100px 24px 80px;
+  background: transparent;
+  text-align: center;
+}
+
+.pricing-title {
+  font-size: 34px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 60px;
+}
+
+/* GRID */
+.pricing-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* CARD */
+.pricing-card {
+  background: linear-gradient(
+    180deg,
+    #2b2b2b 0%,
+    #1f1f1f 100%
+  );
+  border-radius: 22px;
+  padding: 40px 32px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0px;
+}
+
+/* Highlight Plan */
+.pricing-card.highlight {
+  background: linear-gradient(
+    180deg,
+    #2b2b2b 0%,
+    #1f1f1f 100%
+  );
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Plan Name */
+.plan-name {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 18px;
+  color: #ffffff;
+  padding-top: 36px;
+}
+
+/* Price */
+.price {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 0px;
+  color: #ffffff;
+}
+
+.price-old {
+  opacity: 1;
+}
+
+.price-main {
+  color: #ffffff;
+  text-shadow: 0 0 0px rgba(246,255,79,0.2);
+}
+
+/* Features */
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  text-align: left;
+  width: 100%;
+}
+
+.plan-features li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: #e5e5e5;
+  font-weight: 400;
+}
+
+.plan-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #f6ff4f;
+  font-weight: 700;
+}
+
+/* Buttons */
+.plan-button {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  padding: 14px 0;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Outline Button */
+.plan-button.outline {
+  border: 1px solid #f6ff4f;
+  color: #f6ff4f;
+  background: transparent;
+}
+
+/* Filled Button */
+.plan-button.filled {
+  background: #f6ff4f;
+  color: #000;
+  box-shadow: 0 12px 30px rgba(246,255,79,0.2);
+}
+
+.plan-button:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .pricing-title {
+    font-size: 28px;
+  }
+}
+
+.price-divider {
+  width: 100%;
+  height: 1px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+
+  /* sauberes Ein-/Ausfaden */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+}
