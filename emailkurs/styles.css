@@ -13,6 +13,23 @@ body {
   min-height: 100vh;
 }
 
+/* ───── Hilfsklassen für Desktop/Mobile Umschaltung ───── */
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+}
+
 /* ───── Hero Layout ───── */
 
 .hero {
@@ -127,62 +144,123 @@ body {
   gap: 16px;
 }
 
-/* Fake-Linien oben/unten */
-
-.book-header-lines,
-.book-body-lines {
-  flex: 1;
-  background-image: radial-gradient(circle at 0 0, #ddd 0, #ddd 1px, transparent 1px),
-                    radial-gradient(circle at 100% 0, #ddd 0, #ddd 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.4;
-  border-radius: 12px;
-}
-
-.book-title {
-  font-weight: 700;
-  font-size: 1.35rem;
-}
-
-.book-subtitle {
-  font-size: 0.8rem;
-  color: #444;
-  line-height: 1.4;
-}
-
-/* ───── Responsive ───── */
+/* ───── Responsive Hero ───── */
 
 @media (max-width: 860px) {
   .hero-inner {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-
   .hero-copy {
     order: 1;
   }
-
   .hero-visual {
     order: 2;
   }
-
   .hero {
     padding-top: 60px;
     padding-bottom: 60px;
   }
-
   .hero-copy h1 {
     font-size: clamp(2.4rem, 8vw, 3.4rem);
   }
-
   .hero-subtitle {
     max-width: none;
   }
-
   .book-mockup {
     width: 290px;
     height: 460px;
   }
+}
+
+/* ===== Highlight Section ===== */
+
+.highlight-section {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 85px;
+}
+
+.highlight-section h3 {
+  color: rgb(237, 237, 237);
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.highlight-section h4 {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 25px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* 1. Desktop Scroller Style */
+.highlight-scroller {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px 0;
+  
+  /* Fade Effekt */
+  mask-image: linear-gradient(
+    to right, transparent 0%, transparent 8%, black 20%, black 80%, transparent 92%, transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right, transparent 0%, transparent 8%, black 20%, black 80%, transparent 92%, transparent 100%
+  );
+}
+
+.highlight-track {
+  display: flex;
+  gap: 30px;
+}
+.highlight-track a {
+  cursor: default !important;
+}
+.highlight-item {
+  width: 260px;
+  height: auto;
+  border-radius: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center;
+}
+.highlight-item:hover {
+  transform: scale(1.02);
+}
+
+/* 2. Mobile Swiper Style (NEU) */
+.highlight-swiper-mobile {
+  width: 100%;
+  padding-bottom: 50px; /* Platz für Pagination */
+}
+
+.highlight-swiper-mobile .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlight-swiper-mobile .highlight-item {
+  width: 100%;
+  max-width: 280px; /* Begrenzte Breite auf Mobile */
+  height: auto;
+  border-radius: 16px;
+}
+
+/* Swiper Pagination Dots Styling */
+.swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.3;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #f6d12e; /* Optional: Gelbe Farbe wie auf Website 1 */
 }
 
 /* ===== Brand Strip / Logos ===== */
@@ -198,12 +276,55 @@ body {
   margin-bottom: 35px;
 }
 
+/* Desktop Static Image */
 .brand-strip__logos img {
   max-width: 600px;
   width: 100%;
   height: auto;
   opacity: 0.9;
   filter: grayscale(100%);
+}
+
+/* Mobile Marquee (NEU) */
+.brand-strip-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+  width: 100%;
+  
+  /* Fade an den Seiten */
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marquee-track {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  animation: marquee 25s linear infinite;
+}
+
+.brandstrip-mobile-item {
+  max-width: 120px;
+  width: auto;
+  height: auto;
+  opacity: 0.9;
+  filter: grayscale(100%);
+  flex-shrink: 0;
+}
+
+/* Größenanpassung Logos */
+.logo-klein { max-width: 100px; }
+.logo-gross { max-width: 180px; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); } /* 3 Sets, also 1/3 Bewegung */
 }
 
 /* ===== Creator Section ===== */
@@ -221,11 +342,9 @@ body {
   align-items: center;
 }
 
-/* Rundes Bild links */
 .creator-photo {
   text-align: center;
 }
-
 .creator-photo img {
   width: 320px;
   height: 320px;
@@ -235,7 +354,6 @@ body {
   margin: 0 auto;
 }
 
-/* Text rechts */
 .creator-copy h2 {
   font-size: clamp(1.9rem, 3.1vw, 2.5rem);
   font-weight: 400;
@@ -260,7 +378,6 @@ body {
   font-weight: 300;
 }
 
-/* kleines Häkchen vor jedem Punkt */
 .creator-list li::before {
   content: "✓";
   position: absolute;
@@ -268,32 +385,28 @@ body {
   top: 0;
   color: #ffffff;
   font-size: 1.8rem;
-  transform: translateY(-7px); /* leicht nach oben gezogen */
+  transform: translateY(-7px);
 }
 
-/* Formular in der Creator-Section etwas begrenzen */
 .creator .signup-form {
   max-width: 420px;
 }
 
-/* Responsive: unter 900px untereinander statt nebeneinander */
 @media (max-width: 900px) {
   .creator-inner {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-
   .creator-copy {
     text-align: left;
   }
-
   .creator-photo img {
     width: 260px;
     height: 260px;
   }
 }
 
-/* ===== Letzte Section: Mistakes / Course-Details ===== */
+/* ===== Course Section / Mistakes ===== */
 
 .course-section {
   padding: 140px 24px 120px;
@@ -319,7 +432,6 @@ body {
   margin-top: 40px;
 }
 
-/* Liste der „Mistakes“ */
 .course-list {
   list-style: none;
   padding: 0;
@@ -338,7 +450,6 @@ body {
   font-weight: 300;
 }
 
-/* Häkchen wie oben, nur etwas kleiner */
 .course-list li::before {
   content: "✓";
   position: absolute;
@@ -349,172 +460,16 @@ body {
   transform: translateY(-6px);
 }
 
-/* Formular mittig unter der Liste */
 .course-section .signup-form {
   margin: 32px auto 0;
 }
 
-.highlight-section {
-  width: 80%;          /* ← gewünschte Gesamtbreite */
-  margin: 0 auto;      /* ← Section zentrieren */
-  position: relative;
-  overflow: hidden;    /* Wichtig, damit Fade korrekt wirkt */
-  padding-top: 85px;
-}
-
-
-.highlight-section h3 {
-  color: rgb(237, 237, 237);
-  font-size: 24px;
-  margin-bottom: 10px;
-  font-weight: 600;
-  padding-bottom: 10px;
-  text-align: center;
-}
-.highlight-section h4 {
-  font-size: 1.2rem;
-  color: #777;
-  margin-bottom: 25px;
-  font-weight: 400;
-  text-align: center;
-}
-
-/* Outer container → full width, centered */
-.highlight-scroller {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-
-  /* Genau dieser Fade-Effekt */
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    transparent 8%,
-    black 20%,
-    black 80%,
-    transparent 92%,
-    transparent 100%
-  );
-
-  /* Für Safari */
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    transparent 8%,
-    black 20%,
-    black 80%,
-    transparent 92%,
-    transparent 100%
-  );
-}
-
-
-/* Track inside → auto width from content */
-.highlight-track {
-  display: flex;
-  gap: 30px;
-}
-
-.highlight-track a {
-  cursor: default !important;   /* normaler Mauszeiger */
-}
-
-.highlight-track a:hover {
-  cursor: default !important;
-}
-
-
-/* Individual item */
-.highlight-item {
-  width: 260px;
-  height: auto;
-  border-radius: 20px;
-  flex-shrink: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-origin: center;
-}
-
-.highlight-item:hover {
-  transform: scale(1.02);
-}
-
-/*box-shadow: 0 10px 25px rgba(0,0,0,0.35);*/
-
-.highlight-scroller {
-  padding: 20px 0;   /* ← 40px oben UND unten */
-}
-
-/* Entfernt Brevo-Styling */
-.sib-container--vertical,
-#sib-container,
-.sib-form,
-.sib-form-container {
-    background: none !important;
-    border: none !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-}
-
-/* Textfeld wrapper */
-.brevo-wrapper .entry__field {
-    width: 100%;
-    background: transparent;
-    border-radius: 10px;
-    border: 1.5px solid #595959;
-    padding: 2px;
-    margin-bottom: 12px;
-}
-
-/* Textfeld */
-.brevo-wrapper input.input {
-    width: 100%;
-    border: none !important;
-    background: transparent !important;
-    color: #fff !important;
-    padding: 16px 24px !important;
-    font-size: 1.2rem;
-}
-
-/* Placeholder */
-.brevo-wrapper input::placeholder {
-    color: #898989 !important;
-}
-
-/* Button */
-.brevo-wrapper .sib-submit-button {
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    padding: 19px 24px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    font-weight: 350;
-    background: #fff !important;
-    color: #000 !important;
-    box-shadow: 0 14px 30px rgba(0,0,0,0.4);
-}
-
-.brevo-wrapper .sib-submit-button:active {
-    transform: translateY(1px);
-}
-
-/* Versteckt die Error / Success Boxen */
-#success-message,
-#error-message {
-    display: none !important;
-}
-
-/* --- Formular schmaler machen --- */
-
-/* Gesamtbreite des Brevo-Formulars reduzieren */
+/* ===== Brevo Overrides (Clean up) ===== */
 #sib-container {
-    max-width: 360px !important;    /* vorher 540px */
+    max-width: 360px !important;
     width: 100% !important;
     margin: 0 auto !important;
 }
-
-/* Email Input schmaler + angepasst */
 #sib-container input.input {
     width: 100% !important;
     padding: 16px 22px !important;
@@ -524,8 +479,6 @@ body {
     background: transparent !important;
     color: #fff !important;
 }
-
-/* Button schmaler + dein Style */
 #sib-container button.sib-form-block__button {
     width: 100% !important;
     padding: 18px 22px !important;
@@ -537,36 +490,241 @@ body {
     cursor: pointer !important;
     text-align: center !important;
 }
-
-/* Button active-style */
-#sib-container button.sib-form-block__button:active {
-    transform: translateY(1px) !important;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
-}
-
-/* Abstand zwischen Input und Button */
-#sib-container .sib-form-block {
-    padding: 4px 0 !important;
-}
-/* Entfernt Brevo Input-Border */
-.sib-input input.input {
+.sib-input input.input, .entry__field {
     border: none !important;
     outline: none !important;
     background: transparent !important;
-}
-
-/* Entfernt das zusätzliche Brevo-Wrapper-Border */
-.sib-input,
-.entry__field {
-    border: none !important;
     box-shadow: none !important;
 }
-/* Entfernt den weißen Brevo-Honeypot-Kasten vollständig */
-input[name="email_address_check"] {
+input[name="email_address_check"], #success-message, #error-message {
     display: none !important;
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border: none !important;
-    background: transparent !important;
+}
+
+/* =========================================
+   MOBILE OPTIMIERUNG (Allgemein)
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  /* Hero Mobile */
+  .hero {
+    padding: 40px 20px;
+    align-items: flex-start;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-left: 0;
+    text-align: center;
+  }
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 1;
+  }
+  .hero-copy h1 {
+    font-size: 2.8rem;
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #cccccc;
+  }
+  .signup-form {
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero-visual {
+    order: 2;
+    margin-top: -20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .book-mockup {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 480/660;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  /* Highlights Section */
+  .highlight-section {
+    width: 100%;
+    padding: 60px 0 20px;
+  }
+  .highlight-section h3,
+  .highlight-section h4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Creator Section */
+  .creator {
+    padding: 80px 20px;
+  }
+  .creator-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  .creator-photo img {
+    width: 200px;
+    height: 200px;
+    border: 3px solid #333;
+  }
+  .creator-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .creator-list {
+    text-align: left;
+    display: inline-block;
+    padding-left: 0;
+    margin-left: 10px;
+    /* Gap Override für saubere Abstände auf Mobile */
+    gap: 0 !important;
+  }
+  .creator-list li {
+    font-size: 1rem;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .creator-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Course Section */
+  .course-section {
+    padding: 80px 20px;
+  }
+  .course-inner {
+    text-align: center;
+  }
+  .course-list {
+    text-align: left;
+    margin-left: 10px;
+    gap: 10px;
+  }
+  .course-list li {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  .cta-button {
+    width: 100%;
+    font-weight: 600;
+    padding: 22px;
+  }
+}
+
+/* ───── Hilfsklassen für Desktop/Mobile Umschaltung (FIX) ───── */
+
+/* Standard: Desktop an, Mobile aus */
+.desktop-only {
+}
+.mobile-only {
+  display: none !important;
+}
+
+/* Ab 900px und kleiner (Mobile/Tablet): Desktop aus, Mobile an */
+@media (max-width: 900px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+  }
+}
+/* Swiper Anpassung für horizontale Bilder auf Mobile */
+.highlight-swiper-mobile .highlight-item {
+  width: 100%;
+  max-width: 340px; /* Etwas breiter als vorher, da Querformat */
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Optional: Schatten für besseren Look */
+}
+
+/* Pagination Dots etwas sichtbarer machen */
+.swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.4;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #fff;
+}
+
+/* 1. Platz unter den Bildern schaffen */
+.highlight-swiper-mobile {
+  padding-bottom: 50px !important; /* Reserviert Platz für die Dots */
+  position: relative; /* Wichtig für die Positionierung */
+}
+
+/* 2. Die Dots ganz nach unten in den freien Bereich schieben */
+.highlight-swiper-mobile .swiper-pagination {
+  bottom: 0 !important;     /* Klebt am unteren Rand des Containers */
+  top: auto !important;     /* Verhindert Konflikte */
+  position: absolute;
+}
+
+/* ===== FOOTER ===== */
+
+.site-footer {
+  background: #151515;
+  padding: 40px 0 40px;
+  color: #ebebeb;
+  margin-top: 80px;
+  font-family: 'Montserrat';
+}
+
+/* Ganze Zeile nebeneinander */
+.footer-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap; /* Falls zu lang → bricht sauber um */
+}
+
+.footer-copy {
+  font-size: 10px;
+  opacity: 0.85;
+  white-space: nowrap;  /* verhindert hässliche Zeilenbrüche */
+  margin-bottom: -1px;
+  color: #ebebeb;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-size: 10px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease; border-color 0.2s ease;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;  /* invisible line, prevents layout shift */
+  padding-bottom: 2px;                   /* space for underline */
+  margin-bottom: -4px;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  border-bottom: 1px solid #ffffff;      /* underline on hover */
+}
+
+.dot {
+  opacity: 0.5;
 }
