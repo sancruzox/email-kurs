@@ -9,11 +9,12 @@ html,
 body {
   height: 100%;
   font-family: "Montserrat";
-  background: linear-gradient(180deg, #0e0e0e 0%, #1b1b1b 40%, #282828 100%);
+  background-color: #0a0c13;
+  /* background: linear-gradient(180deg, #000000 0%, #1b1b1b 40%, #1f1f1f 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
+  min-height: 100vh; */
 }
 
 .sec {
@@ -53,11 +54,10 @@ body {
 
 .inner-heading {
   color: rgb(231, 247, 83);
-  text-align: left;
-  background-color: #2b2b2b;
+  text-align: left;;
   font-weight: 600;
   font-size: 25px;
-  text-shadow: 0 0 8px rgba(253, 253, 35, 0.5);
+  /* text-shadow: 0 0 8px rgba(253, 253, 35, 0.5);*/
 }
 
 .hero .intro-video-wrapper {
@@ -65,15 +65,105 @@ body {
   height: 100%;
   margin-top: 1rem;
 }
-.hero .intro-video-wrapper iframe {
+/* 1. Dein bestehender Wrapper braucht 'position: relative' */
+.hero .intro-video-wrapper {
+  position: relative; /* WICHTIG: Damit das Overlay sich hieran orientiert */
   display: block;
   width: 100%;
   aspect-ratio: 16/9;
-  border: 0;
+  border-radius: 10px; /* Radius auf den Wrapper verschieben ist sauberer */
+  overflow: hidden;    /* Damit nichts über die runden Ecken steht */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;     /* Zeigt dem User, dass es klickbar ist */
+}
+
+/* 2. Dein iframe (angepasst, damit er den Wrapper ausfüllt) */
+/* 2. Das Video-Element (damit es sich an den Wrapper anpasst) */
+.video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Sorgt dafür, dass das Video den Bereich komplett ausfüllt ohne Verzerrung */
+  display: block;
+}
+
+/* =========================================
+   NEUES VIDEO & PLAYER DESIGN
+   ========================================= */
+
+/* 1. Der Container */
+.hero .intro-video-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  background: #000; /* Falls Video lädt, ist Hintergrund schwarz */
 }
+
+/* 2. Das Video selbst (Behebt den Zoom-Fehler) */
+.video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Video füllt den Kasten perfekt aus */
+  display: block;
+}
+
+/* 3. Das Overlay (Hintergrund über dem Video) */
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Flexbox zentriert den Button perfekt */
+  display: flex;            
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.1); /* Ganz leichter Schatten */
+  transition: all 0.3s ease;
+}
+
+/* 4. Der Button (Glas-Look) */
+/* 4. Der Button (Abgerundetes Rechteck / "Squircle") */
+.play-circle {
+  /* Rechteckige Maße (etwas breiter als hoch) */
+  width: 80px;
+  height: 70px; 
+  
+  /* Die Abrundung (hier kannst du spielen: 10px = eckiger, 30px = runder) */
+  border-radius: 10px;
+  
+  /* Der Glas-Effekt (bleibt gleich) */
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(10px);          
+  -webkit-backdrop-filter: blur(10px); 
+  
+  /* Feiner Rand */
+  border: 0px solid rgba(229, 229, 229, 0.3);
+  
+  /* Zentrierung */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Schatten */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  
+  /* Animation */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 5. Das Icon im Kreis */
+.play-circle svg {
+  margin-left: 5px; /* Optische Korrektur, damit Dreieck mittig wirkt */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+
+}
+
 .hero .price {
   font-size: 18px;
   text-align: center;
@@ -86,14 +176,14 @@ body {
   text-align: center;
 }
 .hero .buy-button-wrapper .buy-button {
-  display: inline-flex;
+    display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 2px 55px;
+  padding: 12px 70px;
   /* ← kompakter, nicer */
-  border-radius: 8px;
-  background-color: #f6d12e;
-  color: #000;
+  border-radius: 6px;
+background-color:#f7d638;
+color: #000000;
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
@@ -101,6 +191,7 @@ body {
   border: none;
   outline: none;
   transition: transform 0.01s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s ease, background-color 0.15s ease;
+  transition: all 0.2s ease;
 }
 .hero .buy-button-wrapper .buy-button span {
   color: #005ea6;
@@ -112,34 +203,40 @@ body {
   vertical-align: middle;
 }
 .hero .buy-button-wrapper .buy-button:hover {
-  background-color: #efc436;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(247, 214, 56, 0.3);
 }
 .hero .compatible-section {
   margin-top: 3rem;
   text-align: center;
-  background-color: #e6e207;
+  background-color: #26262b;
   padding: 2rem 0;
 }
 .hero .compatible-section h3 {
   font-size: 1rem;
+  color: #c7c7c7;
 }
 .hero .compatible-section .icons {
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
+  padding-top: 10px;
 }
 .hero .compatible-section .icons .icon {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
+  margin-right:10px ;
 }
 
 .brete .box {
-  background: #2b2b2b;
-  border-radius: 10px;
+  background: #1c1d21;
+  border-radius: 8px;
   height: 100%;
   padding: 1.5rem;
   box-sizing: border-box;
   color: white;
   position: relative;
+  border: 0px solid #444444;
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.3); */
 }
 @media (max-width: 767px) {
   .brete .box {
@@ -194,7 +291,7 @@ body {
     height: auto;
     margin: 0 auto 2rem auto;
     display: block;
-  }
+}
 }
 
 .waveformSets {
@@ -412,7 +509,7 @@ body {
 .brand-strip-marquee .marquee-content {
   display: inline-flex;
   align-items: center;
-  gap: 30px;
+  gap: 10px;
   animation: marquee 30s linear infinite;
 }
 .brand-strip-marquee .brandstrip-mobile-item {
@@ -790,7 +887,8 @@ body {
 
 /* Macht ein Logo größer (z.B. 160px breit) */
 .brand-strip-marquee .brandstrip-mobile-item.logo-gross {
-    max-width: 160px !important;
+    max-width: 180px !important;
+    padding-left: 10px;
 }
 
 /* Macht ein Logo riesig (falls nötig) */
@@ -858,10 +956,11 @@ body {
 
 /* CARD */
 .pricing-card {
-  background: linear-gradient(
+  background-color: #1c1d21;
+  /* background: linear-gradient(
     180deg,
     #2b2b2b 0%,
-    #1f1f1f 100%
+    #1f1f1f 100% */
   );
   border-radius: 22px;
   padding: 40px 32px;
@@ -875,10 +974,11 @@ body {
 
 /* Highlight Plan */
 .pricing-card.highlight {
-  background: linear-gradient(
+  background-color: #1c1d21;
+ /* background: linear-gradient(
     180deg,
     #2b2b2b 0%,
-    #1f1f1f 100%
+    #1f1f1f 100% */
   );
   border: 1px solid rgba(255,255,255,0.15);
 }
@@ -896,7 +996,7 @@ body {
 .price {
   font-size: 42px;
   font-weight: 700;
-  margin-bottom: 0px;
+  margin-bottom: -10px;
   color: #ffffff;
 }
 
@@ -934,6 +1034,17 @@ body {
   top: 0;
   color: #f6ff4f;
   font-weight: 700;
+}
+
+.plan-features li.unavailable {
+  color: #666666; /* Dunkelgrau statt Weiß */
+  opacity: 0.6;
+}
+
+/* Das Häkchen überschreiben und ein X oder Minus machen */
+.plan-features li.unavailable::before {
+  content: "✕"; /* Oder "-" */
+  color: #666666;  /* Dunkles Grau statt Gelb */
 }
 
 /* Buttons */
@@ -1014,4 +1125,251 @@ body {
     black 80%,
     transparent 100%
   );
+}
+
+.plugin-grid {
+    display: grid;
+    /* WICHTIG: 'auto' sorgt dafür, dass die Spalten eng am Text anliegen */
+    grid-template-columns: repeat(3, auto);
+    
+    /* Zentriert den gesamten Block in der Mitte */
+    justify-content: center;
+    
+    /* Abstand verringert (vorher 16px -> jetzt 10px oder 8px) */
+    gap: 8px 100px; 
+    
+    padding-left: 0;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    list-style: none; /* Standard-Punkte entfernen für sauberere Ausrichtung */
+}
+
+.plugin-grid li {
+    font-size: 0.9rem;
+    color: #d5d5de;
+    line-height: 1.4;
+    text-align: left;
+    
+    /* Eigene Bulletpoints, damit sie schön am Text kleben */
+    display: flex;
+    align-items: center;
+}
+
+/* Der kleine Punkt vor jedem Wort */
+.plugin-grid li::before {
+    content: "•";
+    color: #80829a; /* Farbe des Fragezeichen-Icons oder Weiß */
+    margin-right: 6px; /* Abstand zwischen Punkt und Text */
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+/* === RESPONSIVE ANPASSUNG === */
+
+/* Ab Tablet (unter 900px) -> 2 Spalten */
+@media (max-width: 900px) {
+    .plugin-grid {
+        grid-template-columns: repeat(2, auto);
+        gap: 8px 20px; /* Auf Tablet etwas mehr Luft seitlich */
+    }
+}
+
+/* Ab Handy (unter 550px) -> 1 Spalte, linksbündig */
+@media (max-width: 550px) {
+    .plugin-grid {
+        grid-template-columns: 1fr; /* Wieder volle Breite */
+        justify-content: start;     /* Linksbündig */
+        padding-left: 10px;         /* Kleiner Einzug */
+    }
+    .plugin-grid li {
+        justify-content: flex-start;
+    }
+}
+.lieferumfang li {
+    font-size: 0.9rem;
+    color: #d5d5de;
+    line-height: 1.4;
+    text-align: left;
+    
+    /* Eigene Bulletpoints, damit sie schön am Text kleben */
+    display: flex;
+    align-items: center;
+}
+
+/* Der kleine Punkt vor jedem Wort */
+.lieferumfang li::before {
+    content: "•";
+    color: #80829a; /* Farbe des Fragezeichen-Icons oder Weiß */
+    margin-right: 6px; /* Abstand zwischen Punkt und Text */
+    font-size: 1.2em;
+    line-height: 1;
+}
+@media (max-width: 550px) {
+    .lieferumfang {
+        padding-bottom: 10px ;         /* Kleiner Einzug */
+    }
+  }
+
+  /* =========================================
+   3D HOVER EFFEKT FÜR PRODUKT-BOXEN
+   ========================================= */
+
+/* Wir aktivieren den Effekt nur auf Desktop (ab 992px), 
+   damit es auf dem Handy sauber untereinander bleibt */
+
+  /* @media (min-width: 992px) {
+
+    /* Basis-Einstellungen für beide Bilder */
+    /*.product-image1,
+    .product-image2 {
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
+        /* Schöner, weicher Schlagschatten für Tiefe */
+        /*filter: drop-shadow(0 15px 20px rgba(0,0,0,0.4));
+        cursor: pointer;
+    }
+
+    /* Bild LINKS: Dreht sich leicht nach rechts (zum Text) */
+    /*.product-image1 {
+        /* perspective: Bestimmt wie "tief" der 3D Raum ist */
+        /*transform: perspective(1000px) rotateY(5deg) scale(0.95);
+    }
+
+    /* Bild RECHTS: Dreht sich leicht nach links (zum Text) */
+    /*.product-image2 {
+        transform: perspective(1000px) rotateY(5deg) scale(0.95);
+    }
+
+    /* HOVER STATE (Für beide gleich) */
+    /* Das Bild dreht sich gerade zum User und kommt näher */
+    /*.product-image1:hover,
+    .product-image2:hover {
+        transform: perspective(1000px) rotateY(0deg) scale(0.97); /* Zoom & Gerade */
+       /* filter: drop-shadow(0 15px 20px rgba(0,0,0,0.6)); /* Schatten wird größer */
+    }
+}
+}
+html {
+    scroll-behavior: smooth;
+}
+#preise {
+    /* Das ist magisch: Der Browser stoppt beim Scrollen 15vh (15% der Bildschirmhöhe) VOR dem Element */
+    scroll-margin-top: 8vh; 
+}
+
+/* Container und Abstände */
+.artist-cross-sell {
+  background-color: transparent; /* Passt sich deinem Hintergrund an */
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Optional: feine Trennlinie oben */
+}
+
+/* Die Überschrift oben */
+.artist-cross-sell .section-title {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Bild Gestaltung */
+.artist-cross-sell .image-wrapper img {
+  width: 100%;
+  max-width: 900px; /* Damit es auf großen Bildschirmen nicht riesig wird */
+  height: auto;
+  display: block;
+  margin: 0 auto 30px auto;
+  /* Ein leichter Schein/Schatten für Tiefe, passend zum Dark Mode */
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+  transition: transform 0.3s ease;
+}
+
+
+/* Produkt Titel */
+.artist-cross-sell .product-name {
+  color: #f7d638; /* Dein Gold-Ton */
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Beschreibungstext */
+.artist-cross-sell .product-desc {
+  color: #c8c8c8; /* Helles Grau für gute Lesbarkeit */
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+/* Preis */
+.artist-cross-sell .product-price {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Button Design (Identisch zu deinem gelben Button) */
+.artist-cross-sell .gold-cta-button {
+  display: inline-block;
+  background-color: #f7ea38;
+  color: #000000;
+  padding: 14px 50px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+/* Button Hover Effekt */
+.artist-cross-sell .gold-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(247, 214, 56, 0.3);
+}
+
+/* Mobile Anpassung */
+@media (max-width: 767px) {
+  .artist-cross-sell .section-title {
+    font-size: 1.4rem;
+  }
+  .artist-cross-sell .product-name {
+    font-size: 1.3rem;
+  }
+  .artist-cross-sell .image-wrapper img {
+    max-width: 100%;
+  }
+}
+
+
+
+
+.bundle-image {
+  display: flex;
+  justify-content: center; /* Zentriert horizontal */
+  align-items: center;     /* (Optional) Zentriert vertikal */
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+/* Hier änderst du die Größe */
+.bundle-image img {
+  width: 700px; /* Deine Wunschbreite */
+  height: auto; /* Wichtig: Damit es nicht verzerrt wird */
+  max-width: 100%; 
+}
+@media (max-width: 767px) {
+    .bundle-image {
+        width: 90%;
+        height: auto;
+        /* Damit es zentriert ist: */
+        display: block !important;  
+        margin: 0 auto !important;  
+    }
 }
