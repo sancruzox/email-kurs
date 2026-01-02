@@ -1451,6 +1451,9 @@ color: #000000;
 }
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden !important; /* WICHTIG: Verbietet seitliches Scrollen */
+    position: relative;
 }
 #preise {
     /* Das ist magisch: Der Browser stoppt beim Scrollen 15vh (15% der Bildschirmhöhe) VOR dem Element */
