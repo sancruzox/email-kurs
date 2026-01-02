@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artist Collections - Pro Vocal Preset Pack</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="main-heading">ARTIST PRESET PACK</h2>
+                    <p class="sub-heading">12 Vocal Presets - Inspiriert von den Profis</p>
+                </div>
+            </div>
+
+            <div class="hero-player-wrapper">
+    <div class="hero-play-button" id="heroPlayBtn">
+        <i class="fas fa-play"></i>
+    </div>
+    <div class="hero-waveform-container" id="heroWaveform"></div>
+</div>
+
+<div class="bundle-image">
+    <img src="https://artist-pack.b-cdn.net/Sonstige%20Bilder/Artist%20preset%20pack%20artwork%20combined.png" 
+    alt="bundle artwork" />
+</div>
+
+<div class="col-lg-12">
+                    <h4 class="hero-price">€39,99 EUR</h4>
+                </div>
+
+                <div class="buy-button-wrapper">
+                <a id="scrollButton" href="#preise" class="buy-button">
+                    JETZT KAUFEN
+                    <!-- <img src="https://pvpp-images.b-cdn.net/Sonstiges/PayPal-Logo-2007.png" alt="PayPal"
+                        class="paypal-logo" /> -->
+                </a>
+            </div>
+
+    <div class="compatible-section">
+            <h3>Kompatibel mit Stock Plugins & Waves</h3>
+            <div class="icons">
+                <img src="https://pvpp-images.b-cdn.net/Compatible-section/fllogo.png" alt="FL Studio" class="icon" />
+                <img src="https://pvpp-images.b-cdn.net/Compatible-section/logiclogo.png" alt="Logic Pro"
+                    class="icon" />
+                <img src="https://pvpp-images.b-cdn.net/Compatible-section/waveslogo.png" alt="Waves" class="icon" />
+            </div>
+        </div>
+
+    <section class="artist-collections sec">
+        <div class="container">
+            
+
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="collection-tabs-wrapper">
+                        <div class="collection-tabs" id="collectionTabs"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="display-area" id="displayArea">
+                <div class="row align-items-center">
+                    
+                    <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+                        <img src="" id="displayImage" class="img-fluid display-3d-image" alt="Pack Cover">
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="display-content-box">
+                            <h3 id="displayTitle" class="display-title">Loading...</h3>
+                            
+                            <div id="displayText" class="display-text">
+                                </div>
+
+                            <div id="audioContainer" class="audio-list mt-4">
+                                </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="reviews sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h3>DAS SAGEN ANDERE NUTZER:</h3>
+                    <div class="screenshots">
+                        <div class="screen">
+                            <img src="https://pvpp-images.b-cdn.net/Reviews/Rezension%20-%20Elias%20Razai.png" alt=""
+                                class="img-fluid" />
+                        </div>
+                        <div class="screen">
+                            <img src="https://pvpp-images.b-cdn.net/Reviews/Rezension%20-%20Lennard.png" alt=""
+                                class="img-fluid" />
+                        </div>
+                        <div class="screen">
+                            <img src="https://pvpp-images.b-cdn.net/Reviews/Rezension%20-%20Justin%20Bru%CC%88gmann.png"
+                                alt="" class="img-fluid" />
+                        </div>
+                        <div class="screen">
+                            <img src="https://pvpp-images.b-cdn.net/Reviews/Rezension%20Patrick%20Deiters.jpg" alt=""
+                                class="img-fluid" />
+                        </div>
+                        <div class="screen">
+                            <img src="https://pvpp-images.b-cdn.net/Reviews/Rezension%20-%20Val%20eb.png" alt=""
+                                class="img-fluid" />
+                        </div>
+                        <div class="screen">
+                            <img src="https://pvpp-images.b-cdn.net/Reviews/Rezension%20SOU%20MAC.png" alt=""
+                                class="img-fluid" />
+                        </div>
+                        <div class="screen">
+                            <img src="https://pvpp-images.b-cdn.net/Reviews/Rezension%20trissiv2.jpg" alt=""
+                                class="img-fluid" />
+                        </div>
+                        <div class="screen">
+                            <img src="https://pvpp-images.b-cdn.net/Reviews/Rezension%20Alo%20Testarossa.png.jpg" alt=""
+                                class="img-fluid" />
+                        </div>
+                        <div class="screen">
+                            <img src="https://pvpp-images.b-cdn.net/Reviews/Rezension%20-%20Kevin%20Ku%CC%88hn.png"
+                                alt="" class="img-fluid" />
+                        </div>
+                        <div class="screen">
+                            <img src="https://pvpp-images.b-cdn.net/Reviews/Rezension%20-%20Mare.png" alt=""
+                                class="img-fluid" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="highlight-section sec">
+        <div class="container">
+            <h3>Erfolgreiche Künstler & Marken vertrauen auf meine Arbeit</h3>
+            <h4 class="sub-heading">Meine Mixing Highlights</h4>
+
+            <div class="highlight-scroller d-none d-lg-flex">
+                <div class="highlight-track">
+                    <div class="highlight-item-wrapper">
+                        <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/references-bassa2.png"
+                            class="highlight-item" alt="Bassa 2" />
+                    </div>
+                     <div class="highlight-item-wrapper">
+                        <a href="https://open.spotify.com/intl-de/track/4s51pU4PIcoReTay8pluzo?si=fd1e9eb0c9934075" target="_blank">
+                            <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/References-caney1c.png"
+                                class="highlight-item" alt="Caney 1" />
+                        </a>
+                    </div>
+                    <div class="highlight-item-wrapper">
+                        <a href="https://open.spotify.com/intl-de/track/4pHrsUucnIfuustV09VXKb?si=1467b6e619194cc4" target="_blank">
+                            <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/References-caney2d.png"
+                                class="highlight-item" alt="Caney 2" />
+                        </a>
+                    </div>
+                    <div class="highlight-item-wrapper">
+                        <a href="https://open.spotify.com/intl-de/track/0q3jXMMN5XZCHexSPkWipH?si=31b382c7d0b046e3" target="_blank">
+                            <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/references-nadiife.png"
+                                class="highlight-item" alt="Nadiife" />
+                        </a>
+                    </div>
+                    <div class="highlight-item-wrapper">
+                        <a href="https://open.spotify.com/intl-de/track/7t2C6805FQYU31zoQCA2Gl?si=2397c1eb66fe409d" target="_blank">
+                            <img src="https://pvpp-images.b-cdn.net/Mixing-Highlights/references-bassa.png"
+                                class="highlight-item" alt="Bassa" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper highlight-swiper-mobile d-lg-none">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="https://open.spotify.com/intl-de/track/0q3jXMMN5XZCHexSPkWipH?si=31b382c7d0b046e3" target="_blank">
+                            <img src="https://pvpp-images.b-cdn.net/Mobile/mobile-highlight-section/highlight-1.png"
+                                class="highlight-item img-fluid" alt="Highlight 1" />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://open.spotify.com/intl-de/track/4s51pU4PIcoReTay8pluzo?si=fd1e9eb0c9934075" target="_blank">
+                            <img src="https://pvpp-images.b-cdn.net/Mobile/mobile-highlight-section/highlight-2.png"
+                                class="highlight-item img-fluid" alt="Highlight 2" />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://open.spotify.com/intl-de/track/4pHrsUucnIfuustV09VXKb?si=1467b6e619194cc4" target="_blank">
+                            <img src="https://pvpp-images.b-cdn.net/Mobile/mobile-highlight-section/highlight-3.png"
+                                class="highlight-item img-fluid" alt="Highlight 3" />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="https://open.spotify.com/intl-de/track/7t2C6805FQYU31zoQCA2Gl?si=2397c1eb66fe409d" target="_blank">
+                            <img src="https://pvpp-images.b-cdn.net/Mobile/mobile-highlight-section/highlight-4.png"
+                                class="highlight-item img-fluid" alt="Highlight 4" />
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+
+            <p class="sub-heading text-center" style="margin-top: 50px; color: #9f9f9f; padding-bottom: 7px; font-size: 18px;">
+    Firmen mit denen ich gearbeitet habe
+</p>
+
+            <div class="brand-strip__logos brand-strip__logos-desktop d-none d-lg-block">
+                <img src="https://pvpp-images.b-cdn.net/Brand-Karussell/Brandkarussel%20Remastered%20v3.png"
+                    alt="Logos von Meta, Adobe, Spotify" class="img-fluid" />
+            </div>
+
+            <div class="brand-strip-marquee brand-strip__logos-mobile d-lg-none">
+    <div class="marquee-track">
+        <div class="marquee-content">
+            
+            <img src="https://pvpp-images.b-cdn.net/Mobile/mobile-brandstrip/brandstrip-1.png"
+                alt="Brand Strip 1" class="brandstrip-mobile-item img-fluid logo-gross" />
+            
+            <img src="https://pvpp-images.b-cdn.net/Mobile/mobile-brandstrip/brandstrip-2.png"
+                alt="Brand Strip 2" class="brandstrip-mobile-item img-fluid logo-klein" />
+            
+            <img src="https://pvpp-images.b-cdn.net/Mobile/mobile-brandstrip/brandstrip-3.png"
+                alt="Brand Strip 3" class="brandstrip-mobile-item img-fluid" />
+            
+
+            <img src="https://pvpp-images.b-cdn.net/Mobile/mobile-brandstrip/brandstrip-1.png"
+                alt="Brand Strip 1" class="brandstrip-mobile-item img-fluid logo-gross" />
+            
+            <img src="https://pvpp-images.b-cdn.net/Mobile/mobile-brandstrip/brandstrip-2.png"
+                alt="Brand Strip 2" class="brandstrip-mobile-item img-fluid logo-klein" />
+            
+            <img src="https://pvpp-images.b-cdn.net/Mobile/mobile-brandstrip/brandstrip-3.png"
+                alt="Brand Strip 3" class="brandstrip-mobile-item img-fluid" />
+                
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <section class="backstory sec">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 backstory-left order-2 order-lg-0">
+                    <h2>MEIN ZIEL</h2>
+                    <p>
+                        Als Mixing Engineer und Künstler weiß ich wie es ist, wenn die
+                        technischen Aspekte <br />der Musikproduktion dir Kreativität und
+                        Zeit rauben. Deshalb habe ich mich dazu entschieden dieses Vocal
+                        Preset Pack zu entwickeln, das dir dabei hilft deine Vocals
+                        <br />auf das nächste Level zu bringen und dabei Zeit zu sparen.
+                    </p>
+                </div>
+                <div class="col-lg-6 creator-wrapper order-1 order-lg-0">
+                    <div class="creator-photo-wrapper">
+                        <img src="https://pvpp-images.b-cdn.net/Sonstiges/Robin%202025%20(Gelber%20HG%20v2).jpg"
+                            alt="Creator" class="creator-photo img-fluid" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-8 mx-auto">
+                    <h3 class="faq-title">FAQs</h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-icon">?</span>
+                            <span class="faq-question-text">
+                                Mit welchen DAW funktionieren die Presets?
+                            </span>
+                            <span class="faq-toggle">▾</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Im Download enthalten sind 3 Versionen des Preset Packs: </p>
+                                <ul class="lieferumfang">
+                                <li>Preset Pack für FL Studio</li>
+                                <li>Preset Pack für Logic Pro</li>
+                                <li>Preset Pack für Waves Plugins (mit jeder DAW Kompatibel)</li>
+                                </ul>
+                            
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-icon">?</span>
+                            <span class="faq-question-text">
+                                Welche Plugins benötige ich?
+                            </span>
+                            <span class="faq-toggle">▾</span>
+                        </button>
+                        <div class="faq-answer">
+    <p>
+        <strong>FL Studio & Logic Pro Version:</strong> 
+        <br> Du brauchst nur die bereits enthaltenen Plugins deiner DAW (Stock Plugins)
+        <br>
+        <br>
+        <strong>Waves Version:</strong> 
+        <br>Alle verwendeten Plugins sind im Waves Essentials Abo erhältlich:
+    </p>
+    
+    <ul class="plugin-grid">
+        <li>StudioRack (Kostenlos)</li>
+        <li>DeEsser</li>
+        <li>F6 EQ</li>
+        <li>Renaissance Compressor</li>
+        <li>Renaissance EQ</li>
+        <li>Renaissance Vox</li>
+        <li>C4 Multiband Compressor</li>
+        <li>Manny Marroquin Triple D</li>
+        <li>Manny Marroquin Reverb</li>
+        <li>Infected Mushroom Pusher</li>
+        <li>C4 Multiband</li>
+        <li>TrueVerb</li>
+        <li>Doubler</li>
+        <li>CLA-76</li>
+        <li>H-Delay</li>
+        <li>BB Tubes</li>
+        <li>GTR Stomps</li>
+        <li>L1 Ultramaximizer</li>
+    </ul>
+</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-icon">?</span>
+                            <span class="faq-question-text">
+                                Wie installiere ich die Presets?
+                            </span>
+                            <span class="faq-toggle">▾</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Du erhältst eine Schritt-für-Schritt Video Anleitung + PDF
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-icon">?</span>
+                            <span class="faq-question-text">
+                                Ist auf den Presets Auto-Tune drauf?
+                            </span>
+                            <span class="faq-toggle">▾</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Nein, meine Einstellung vom Auto-Tune wäre
+                                höchstwahrscheinlich nicht kompatibel mit deinem Song, da man
+                                die Tonart immer individuell auf den eigenen Song einstellen
+                                muss, damit es gut klingt.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span class="faq-icon">?</span>
+                            <span class="faq-question-text">
+                                Erhalte ich kostenlose Updates?
+                            </span>
+                            <span class="faq-toggle">▾</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>
+                                Ja, du erhältst alle zukünftigen Preset Updates kostenlos per
+                                E-Mail.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div id="preise">
+   </div>
+  <h2 class="pricing-title">Wähle dein Paket</h2>
+
+  <div class="pricing-grid">
+
+    <!-- PLAN 1 -->
+    <div class="pricing-card">
+      <h3 class="plan-name">Mix</h3>
+
+      <div class="price">
+        <span class="price-old">€39,99</span>
+      </div>
+
+      <div class="price-divider"></div>
+
+      <ul class="plan-features">
+        <li>12 Artist Vocal Presets</li>
+        <li>Lebenslange Updates</li>
+        <li>Tutorials zur Nutzung</li>
+        <li class="unavailable">Pro Mastering Preset</li>
+      </ul>
+
+      <a href="DEIN-LINK-ZUM-MIX-PRODUKT"
+         class="plan-button outline">
+        Kaufen
+      </a>
+    </div>
+
+    <!-- PLAN 2 (HIGHLIGHT) -->
+    <div class="pricing-card highlight">
+      <h3 class="plan-name">Mix & Master</h3>
+
+      <div class="price">
+        <span class="price-main">€44,99</span>
+      </div>
+
+      <div class="price-divider"></div>
+
+      <ul class="plan-features">
+        <li>12 Artist Vocal Presets</li>
+        <li>Lebenslange Updates</li>
+        <li>Tutorials zur Nutzung</li>
+        <li>Pro Mastering Preset</li>
+      </ul>
+
+      <a href="DEIN-LINK-ZUM-MIX-MASTER-PRODUKT"
+         class="plan-button filled">
+        Kaufen
+      </a>
+    </div>
+
+  </div>
+</section>
+
+    <!-- <section class="hero sec pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="main-heading">
+                        IN WENIGEN KLICKS ZUM BESSEREN MIX <br />
+                        <span class="highlight">PRO VOCAL PRESET PACK</span>
+                    </h1>
+                </div>
+
+                <div class="col-lg-12">
+                    <h4 class="price">€39,99 EUR</h4>
+                </div>
+            </div>
+
+            <div class="buy-button-wrapper">
+                <a href="#" class="buy-button">
+                    Direkt zu
+                    <img src="https://pvpp-images.b-cdn.net/Sonstiges/PayPal-Logo-2007.png" alt="PayPal"
+                        class="paypal-logo" />
+                </a>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="single-presets sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h3 class="single-presets-title">Suchst du einen bestimmten Sound?</h3>
+                <p class="sub-heading">Hole dir einzelne Artist Presets für je <strong>29€</strong></p>
+            </div>
+        </div>
+
+        <div class="single-presets-slider-wrapper" style="position: relative; padding: 0 50px;">
+    
+    <div class="swiper single-presets-swiper" style="overflow: hidden; padding: 10px;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="#" class="single-item"><img src="https://artist-pack.b-cdn.net/Preview%20Tabs/pashanim%20procuct%20card%203d%20edit%20v1.png" alt="1"><h4>SHABAB</h4><span>29€</span></a></div>
+            <div class="swiper-slide"><a href="#" class="single-item"><img src="https://artist-pack.b-cdn.net/Preview%20Tabs/lucio%20procuct%20card%203d%20v1%20edit.png" alt="2"><h4>101</h4><span>29€</span></a></div>
+            <div class="swiper-slide"><a href="#" class="single-item"><img src="https://artist-pack.b-cdn.net/Preview%20Tabs/reezy%20procuct%20card%203d%20edit_.png" alt="3"><h4>ITACHI FLOW</h4><span>29€</span></a></div>
+           <div class="swiper-slide"><a href="#" class="single-item"><img src="https://artist-pack.b-cdn.net/Preview%20Tabs/raf%20camora%20procuct%20card%203d%20edit.png" alt="1"><h4>PALMEN</h4><span>29€</span></a></div>
+            <div class="swiper-slide"><a href="#" class="single-item"><img src="https://artist-pack.b-cdn.net/Preview%20Tabs/ufo%20procuct%20card%203d%20edit_.png" alt="2"><h4>UFO</h4><span>29€</span></a></div>
+            <div class="swiper-slide"><a href="#" class="single-item"><img src="https://artist-pack.b-cdn.net/Preview%20Tabs/absent%20procuct%20card%203d%20edit_.png" alt="3"><h4>ABSINTH</h4><span>29€</span></a></div>
+           <div class="swiper-slide"><a href="#" class="single-item"><img src="https://artist-pack.b-cdn.net/Preview%20Tabs/t-low%20procuct%20card%203d%20v3%20edit.png" alt="1"><h4>WE MADE IT</h4><span>29€</span></a></div>
+            <div class="swiper-slide"><a href="#" class="single-item"><img src="https://artist-pack.b-cdn.net/Preview%20Tabs/samra%20procuct%20card%203d%20edit_.png" alt="2"><h4>CATALEYA</h4><span>29€</span></a></div>
+            <div class="swiper-slide"><a href="#" class="single-item"><img src="https://artist-pack.b-cdn.net/Preview%20Tabs/Faroon%20procuct%20card%203d%20edit_.png" alt="3"><h4>FEUER</h4><span>29€</span></a></div>
+           <div class="swiper-slide"><a href="#" class="single-item"><img src="https://artist-pack.b-cdn.net/Preview%20Tabs/nizi%20procuct%20card%203d%20edit.png" alt="1"><h4>AKH</h4><span>29€</span></a></div>
+            <div class="swiper-slide"><a href="#" class="single-item"><img src="https://artist-pack.b-cdn.net/Preview%20Tabs/Luis%20procuct%20card%203d%20edit_.png" alt="2"><h4>NEW ERA CAP</h4><span>29€</span></a></div>
+            <div class="swiper-slide"><a href="#" class="single-item"><img src="https://artist-pack.b-cdn.net/Preview%20Tabs/makko%20procuct%20card%203d%20edit_.png" alt="3"><h4>ZAHNLÜCKE</h4><span>29€</span></a></div>
+           
+        </div>
+    </div>
+
+    <div class="swiper-button-next" style="color: #f6d12e; font-weight: bold;"></div>
+    <div class="swiper-button-prev" style="color: #f6d12e; font-weight: bold;"></div>
+
+</div>
+        
+    
+    </div>
+</section>
+
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-row d-flex justify-content-center align-items-center flex-wrap">
+                        <p class="footer-copy">© 2025, San Cruzo</p>
+                        <span class="dot d-none d-lg-inline">•</span>
+
+                        <div class="footer-links d-flex align-items-center flex-wrap">
+                            <a href="agb.html">AGB</a>
+                            <span class="dot">•</span>
+
+                            <a href="datenschutz.html">Datenschutzerklärung</a>
+                            <span class="dot">•</span>
+
+                            <a href="widerruf.html">Widerrufsbelehrung</a>
+                            <span class="dot">•</span>
+
+                            <a href="impressum.html">Impressum</a>
+                            <span class="dot">•</span>
+
+                            <a href="kontakt.html">Kontakt</a>
+                            <span class="dot">•</span>
+
+                            <a href="#" onclick="CookieScript.instance.show(); return false;">Cookies verwalten</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.min.js"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // ############################################################
+            // TEIL A: DATEN & TABS (Artist Collections)
+            // ############################################################
+            
+            const collectionsData = [
+                {
+                    id: "shabab",
+                    name: "SHABAB",
+                    tabImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/pashanim%20procuct%20card%203d%20edit%20v1.png",
+                    mainImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/pashanim%20procuct%20card%203d%20edit%20v1.png",
+                    title: 'Inspiriert von Pashanims Hit Album "Lover Boy"',
+                    description: `<p>This pack includes premium Melodies, Drum Loops, Drum One Shots, FX, and more, inspired by his popular album "Certified Lover Boy".</p><p>Our team studied the ins and out of his latest sound, crafting new samples that pull inspiration from each song on the album.</p>`,
+                    tracks: [
+                        { title: "OHNE Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" },
+                        { title: "MIT Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" }
+                    ]
+                },
+                {
+                    id: "101",
+                    name: "101",
+                    tabImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/lucio%20procuct%20card%203d%20v1%20edit.png",
+                    mainImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/lucio%20procuct%20card%203d%20v1%20edit.png",
+                    title: 'Inspiriert von Reezys Latest Album Release',
+                    description: `<p>With the recent release of Bad Bunny's latest album "Nadie Sabe Lo Que Va a Pasar Mañana"...</p><p>Our team decided to break down every single song on the record, studying the tiny details of the production throughout.</p>`,
+                    tracks: [
+                        { title: "OHNE Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" },
+                        { title: "MIT Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" }
+                    ]
+                },
+                {
+                    id: "itachiflow",
+                    name: "ITACHI FLOW",
+                    tabImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/reezy%20procuct%20card%203d%20edit_.png",
+                    mainImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/reezy%20procuct%20card%203d%20edit_.png",
+                    title: 'Inspiriert von UFO361 Latest Album',
+                    description: `<p>With the recent release of The Weeknd's new album "Dawn FM", our team studied the record from top to bottom.</p>`,
+                    tracks: [
+                        { title: "OHNE Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" },
+                        { title: "MIT Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" }
+                    ]
+                },
+                {
+                    id: "palmen",
+                    name: "PALMEN",
+                    tabImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/raf%20camora%20procuct%20card%203d%20edit.png", 
+                    mainImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/raf%20camora%20procuct%20card%203d%20edit.png", 
+                    title: 'Inspiriert von Pashanims Hit Album "Lover Boy"',
+                    description: `<p>Sample Text...</p>`,
+                    tracks: [
+                        { title: "OHNE Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" },
+                        { title: "MIT Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" }
+                    ]
+                },
+                {
+                    id: "ufo",
+                    name: "UFO",
+                    tabImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/ufo%20procuct%20card%203d%20edit_.png",
+                    mainImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/ufo%20procuct%20card%203d%20edit_.png",
+                    title: 'Inspiriert von Reezys Latest Album Release',
+                    description: `<p>Sample Text...</p>`,
+                    tracks: [
+                        { title: "OHNE Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" },
+                        { title: "MIT Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" }
+                    ]
+                },
+                {
+                    id: "absinth",
+                    name: "ABSINTH",
+                    tabImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/absent%20procuct%20card%203d%20edit_.png",
+                    mainImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/absent%20procuct%20card%203d%20edit_.png",
+                    title: 'Inspiriert von UFO361 Latest Album',
+                    description: `<p>With the recent release of The Weeknd's new album "Dawn FM", our team studied the record from top to bottom.</p>`,
+                    tracks: [
+                        { title: "OHNE Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" },
+                        { title: "MIT Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" }
+                    ]
+                },
+                {
+                    id: "wemadeit",
+                    name: "WE MADE IT",
+                    tabImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/t-low%20procuct%20card%203d%20v3%20edit.png",
+                    mainImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/t-low%20procuct%20card%203d%20v3%20edit.png",
+                    title: 'Inspiriert von Pashanims Hit Album "Lover Boy"',
+                    description: `<p>This pack includes premium Melodies...</p>`,
+                    tracks: [
+                        { title: "OHNE Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" },
+                        { title: "MIT Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" }
+                    ]
+                },
+                {
+                    id: "cataleya",
+                    name: "CATALEYA",
+                    tabImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/samra%20procuct%20card%203d%20edit_.png",
+                    mainImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/samra%20procuct%20card%203d%20edit_.png",
+                    title: 'Inspiriert von Reezys Latest Album Release',
+                    description: `<p>Sample Text...</p>`,
+                    tracks: [
+                        { title: "OHNE Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" },
+                        { title: "MIT Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" }
+                    ]
+                },
+                {
+                    id: "feuer",
+                    name: "FEUER",
+                    tabImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/Faroon%20procuct%20card%203d%20edit_.png",
+                    mainImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/Faroon%20procuct%20card%203d%20edit_.png",
+                    title: 'Inspiriert von UFO361 Latest Album',
+                    description: `<p>Sample Text...</p>`,
+                    tracks: [
+                        { title: "OHNE Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" },
+                        { title: "MIT Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" }
+                    ]
+                },
+                {
+                    id: "akh",
+                    name: "AKH",
+                    tabImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/nizi%20procuct%20card%203d%20edit.png",
+                    mainImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/nizi%20procuct%20card%203d%20edit.png",
+                    title: 'Inspiriert von Pashanims Hit Album "Lover Boy"',
+                    description: `<p>Sample Text...</p>`,
+                    tracks: [
+                        { title: "OHNE Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" },
+                        { title: "MIT Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" }
+                    ]
+                },
+                {
+                    id: "neweracap",
+                    name: "NEW ERA CAP",
+                    tabImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/Luis%20procuct%20card%203d%20edit_.png",
+                    mainImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/Luis%20procuct%20card%203d%20edit_.png",
+                    title: 'Inspiriert von Reezys Latest Album Release',
+                    description: `<p>Sample Text...</p>`,
+                    tracks: [
+                        { title: "OHNE Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" },
+                        { title: "MIT Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" }
+                    ]
+                },
+                {
+                    id: "zahnlücke",
+                    name: "ZAHNLÜCKE",
+                    tabImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/makko%20procuct%20card%203d%20edit_.png",
+                    mainImage: "https://artist-pack.b-cdn.net/Preview%20Tabs/makko%20procuct%20card%203d%20edit_.png",
+                    title: 'Inspiriert von UFO361 Latest Album',
+                    description: `<p>Sample Text...</p>`,
+                    tracks: [
+                        { title: "OHNE Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" },
+                        { title: "MIT Preset", url: "https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3" }
+                    ]
+                }
+            ];
+
+            // --- STATE VARIABLEN ---
+            let activeWavesurfers = []; 
+            let activeIndex = 0; 
+            const tabsContainer = document.getElementById('collectionTabs');
+
+            // --- FUNKTIONEN ---
+            function init() {
+                if(tabsContainer) {
+                    renderTabs();
+                    loadContent(0);
+                }
+            }
+
+            function renderTabs() {
+                tabsContainer.innerHTML = '';
+                collectionsData.forEach((collection, index) => {
+                    const btn = document.createElement('div');
+                    btn.className = `collection-tab ${index === activeIndex ? 'active' : ''}`;
+                    btn.onclick = () => switchTab(index);
+                    btn.innerHTML = `
+                        <div class="tab-image-wrapper">
+                            <img src="${collection.tabImage}" alt="${collection.name}">
+                        </div>
+                        <span class="tab-name">${collection.name}</span>
+                    `;
+                    tabsContainer.appendChild(btn);
+                });
+            }
+
+            function switchTab(index) {
+                if (index === activeIndex) return;
+                activeIndex = index;
+                document.querySelectorAll('.collection-tab').forEach((tab, i) => {
+                    if (i === index) tab.classList.add('active');
+                    else tab.classList.remove('active');
+                });
+                const displayArea = document.getElementById('displayArea');
+                displayArea.style.opacity = 0;
+                setTimeout(() => {
+                    loadContent(index);
+                    displayArea.style.opacity = 1;
+                }, 200);
+            }
+
+            function loadContent(index) {
+                const data = collectionsData[index];
+                document.getElementById('displayImage').src = data.mainImage;
+                document.getElementById('displayTitle').innerHTML = data.title;
+                document.getElementById('displayText').innerHTML = data.description;
+                destroyOldPlayers();
+                createAudioPlayers(data.tracks);
+            }
+
+            function destroyOldPlayers() {
+                activeWavesurfers.forEach(ws => ws.destroy());
+                activeWavesurfers = [];
+                document.getElementById('audioContainer').innerHTML = '';
+            }
+
+            function createAudioPlayers(tracks) {
+                const audioContainer = document.getElementById('audioContainer');
+                tracks.forEach((track, i) => {
+                    const wrapper = document.createElement("div");
+                    wrapper.classList.add("waveformSet");
+                    const uniqueId = `wave-${Date.now()}-${i}`;
+                    wrapper.innerHTML = `
+                        <div class="wave-row">
+                            <i class="fas fa-play play-btn-icon" id="btn-${uniqueId}"></i>
+                            <div class="waveformContainer" id="${uniqueId}"></div>
+                        </div>
+                        <div class="wave-title">${track.title}</div>
+                    `;
+                    audioContainer.appendChild(wrapper);
+
+                    const ws = WaveSurfer.create({
+                        container: `#${uniqueId}`,
+                        waveColor: "#555",
+                        progressColor: "#fff", 
+                        height: 40,
+                        hideScrollbar: true,
+                        cursorWidth: 0,
+                        url: track.url,
+                    });
+
+                    const btn = document.getElementById(`btn-${uniqueId}`);
+                    ws.on('finish', () => {
+                        ws.seekTo(0);
+                        btn.classList.remove("fa-pause");
+                        btn.classList.add("fa-play");
+                    });
+                    btn.addEventListener("click", () => {
+                        activeWavesurfers.forEach(otherWs => {
+                            if (otherWs !== ws) otherWs.pause();
+                        });
+                        document.querySelectorAll('.play-btn-icon').forEach(b => {
+                            if(b !== btn) {
+                                b.classList.remove("fa-pause");
+                                b.classList.add("fa-play");
+                            }
+                        });
+                        if (ws.isPlaying()) {
+                            ws.pause();
+                            btn.classList.remove("fa-pause");
+                            btn.classList.add("fa-play");
+                        } else {
+                            ws.play();
+                            btn.classList.remove("fa-play");
+                            btn.classList.add("fa-pause");
+                        }
+                    });
+                    activeWavesurfers.push(ws);
+                });
+            }
+
+            // TABS STARTEN
+            init();
+
+
+            // ############################################################
+            // TEIL B: HERO PLAYER (Dein großer Player oben)
+            // ############################################################
+            if(document.getElementById('heroWaveform')) {
+                const heroWave = WaveSurfer.create({
+                    container: '#heroWaveform',
+                    waveColor: '#808080',   // Dein gewünschtes Grau
+                    progressColor: '#ebebeb', // Dein gewünschtes Hellgrau
+                    height: 60,
+                    cursorWidth: 0,
+                    responsive: true,
+                    url: 'https://audiopreviews.b-cdn.net/Nachher%20-%20Pashanim3(2).mp3' 
+                });
+
+                const heroBtn = document.getElementById('heroPlayBtn');
+                if(heroBtn) {
+                    const heroIcon = heroBtn.querySelector('i');
+                    heroBtn.addEventListener('click', () => {
+                        heroWave.playPause();
+                    });
+                    heroWave.on('play', () => {
+                        heroIcon.classList.remove('fa-play');
+                        heroIcon.classList.add('fa-pause');
+                        // Andere Player stoppen
+                        activeWavesurfers.forEach(ws => ws.pause());
+                    });
+                    heroWave.on('pause', () => {
+                        heroIcon.classList.remove('fa-pause');
+                        heroIcon.classList.add('fa-play');
+                    });
+                    heroWave.on('finish', () => {
+                        heroWave.seekTo(0);
+                        heroIcon.classList.remove('fa-pause');
+                        heroIcon.classList.add('fa-play');
+                    });
+                }
+            }
+
+
+            // ############################################################
+            // TEIL C: SLIDER / SWIPER LOGIK
+            // ############################################################
+            
+            // 1. MOBILE HIGHLIGHT SLIDER (Referenzen oben)
+            if(document.querySelector(".highlight-swiper-mobile")) {
+                new Swiper(".highlight-swiper-mobile", {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    loop: true,
+                    observer: true,
+                    observeParents: true,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: ".highlight-swiper-mobile .swiper-pagination",
+                        clickable: true,
+                    },
+                });
+            }
+
+        
+
+
+            // ############################################################
+            // TEIL D: FAQs
+            // ############################################################
+            const faqItems = document.querySelectorAll(".faq-item");
+            if (faqItems.length > 0) {
+                faqItems.forEach((item) => {
+                    const question = item.querySelector(".faq-question");
+                    const answer = item.querySelector(".faq-answer");
+                    if (question && answer) {
+                        answer.style.maxHeight = "0px";
+                        question.addEventListener("click", () => {
+                            const isOpen = item.classList.contains("is-open");
+                            faqItems.forEach((i) => {
+                                if (i !== item) {
+                                    i.classList.remove("is-open");
+                                    const otherAnswer = i.querySelector(".faq-answer");
+                                    if (otherAnswer) otherAnswer.style.maxHeight = "0px";
+                                }
+                            });
+                            if (isOpen) {
+                                item.classList.remove("is-open");
+                                answer.style.maxHeight = "0px";
+                            } else {
+                                item.classList.add("is-open");
+                                answer.style.maxHeight = answer.scrollHeight + "px";
+                            }
+                        });
+                    }
+                });
+            }
+
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // 1. UNSER PRESET SCROLLER
+    new Swiper('.single-presets-swiper', {
+        slidesPerView: 1,       // Handy: 1 Bild
+        spaceBetween: 20,
+        loop: false,
+        
+        // Pfeile verbinden
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // Responsive: Hier sagen wir "Mach mehr Bilder auf PC"
+        breakpoints: {
+            600: { slidesPerView: 2 },
+            900: { slidesPerView: 3 },
+            1200: { slidesPerView: 5 } // Desktop: 5 Bilder nebeneinander!
+        }
+    });
+
+
+    // 2. (Optional) Dein Highlight Slider oben - falls du ihn noch brauchst
+    if(document.querySelector(".highlight-swiper-mobile")) {
+        new Swiper(".highlight-swiper-mobile", {
+            slidesPerView: 1, spaceBetween: 20, loop: true,
+            pagination: { el: ".swiper-pagination", clickable: true }
+        });
+    }
+
+    
+
+});
+</script>
+
+
+
+</body>
+</html>
