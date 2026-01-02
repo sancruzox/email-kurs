@@ -1457,7 +1457,7 @@ html {
 }
 #preise {
     /* Das ist magisch: Der Browser stoppt beim Scrollen 15vh (15% der Bildschirmhöhe) VOR dem Element */
-    scroll-margin-top: 15vh; 
+    scroll-margin-top: 10vh; 
 }
 
 @media (max-width: 767px) {
