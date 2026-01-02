@@ -969,27 +969,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const scrollBtn = document.getElementById('scrollButton');
-    
-    if (scrollBtn) {
-        scrollBtn.addEventListener('click', function(e) {
-            e.preventDefault(); // 1. Verhindert, dass #preise in die URL kommt
-            
-            const targetSection = document.getElementById('preise');
-            
-            if (targetSection) {
-                // 2. Scrollt sanft zum Ziel
-                targetSection.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start' 
-                });
-            }
-        });
-    }
-});
-</script>
 
 
 
