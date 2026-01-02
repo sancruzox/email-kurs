@@ -1262,6 +1262,7 @@ html {
   padding: 60px 20px;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.05); /* Optional: feine Trennlinie oben */
+  padding-top: 50px;
 }
 
 /* Die Überschrift oben */
